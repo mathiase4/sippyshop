@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %} All Mugs{% endblock %}
+
+{% block content %}
+<h1>All Mugs</h1>
+
+
+<!-- my layout for the products -->
+ <div class="row">
+    {% for product in products %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            {% if product.image_url %}
+            <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
+            {% endif %}
+        <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+            <p class="fw-bold">${{ product.price }}</p>
+        </div>
+        </div>
+    </div>
+    {% endfor ‰}
+ </div>
+ {% endblock %}
