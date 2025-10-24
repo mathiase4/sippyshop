@@ -103,4 +103,35 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
+/* Hero section styling */
 
+.hero-section {
+    background: linear-gradient(135deg, #8b5a3c 0%, #b8733c 100%);
+    padding: 8rem 2rem;
+    text-align: center;
+    margin-bottom: 4rem; 
+}
+
+.hero-content h1 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+
+}
+
+.hero-content p {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+/* Products Section Styling */
+.products-section {
+    margin-bottom: 4rem;
+}
+
+.products-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}   
