@@ -1,0 +1,15 @@
+/* base styling for body */
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Headings use Montserrat font */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+/* Navbar styling */
+.navbar-brand {
+    font-weight: 700;
+}
