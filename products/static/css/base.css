@@ -2,14 +2,14 @@
 body {
     font-family: 'Inter', sans-serif;
     font-weight: 300;
-    background-color: #faf8f5;
+    background-color: #000;
 }
 
 /* Headings use Montserrat font */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Merriweather', sans-serif;
     font-weight: 700;
-    color: #6b4423;
+    color: #faf8f5;
 }
 
 /* Navbar styling */
@@ -29,10 +29,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* logo styling */
 .logo {
-    color: white;
+    color: #faf8f5;
     text-decoration: none;
     font-size: 1.5rem;
-    font-family: 'Monserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
 }
 
@@ -46,13 +46,13 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .nav-links a {
-    color: white;
+    color: #faf8f5;
     text-decoration: none;
     font-family: 'Inter', sans-serif;
 }
 
 .nav-links a:hover {
-    color: #ffd4a3;
+    color: #fff;
 }
 
 /* aut buttons styling making space on navbar */
@@ -65,13 +65,13 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.5rem 1.2rem;
     border-radius: 5px;
     text-decoration: none;
-    color: white;
+    color: #faf8f5;
     font-weight: 500;
     
 }
 
 .nav-user {
-    color: white;
+    color: #faf8f5;
     margin-right: 0.2rem;
 }
 
@@ -80,8 +80,8 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 .login-btn:hover {
-    background-color: #000;
-    ;
+    background-color: #faf8f5;
+    color: #000;
 }
 .signup-btn {
     background-color: white;
@@ -95,35 +95,70 @@ h1, h2, h3, h4, h5, h6 {
 
 .logout-btn {
     background-color: #000;
-    color: white;
+    color: #faf8f5;
 }
 
 .logout-btn:hover {
-    background-color: #000;
-    color: white;
+    background-color: #d9534f;
+    color: #fff;
 }
 
-/* Hero section styling */
+/* HERO SECTION STYLING!! */
 
 .hero-section {
-    background: linear-gradient(135deg, #8b5a3c 0%, #b8733c 100%);
-    padding: 8rem 2rem;
+   background-image: url('/static/images/herosection.webp');
+   background-size: cover;
+   background-position: center;
+   height: 80vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   margin-bottom: 0rem;
+}
+
+/* Dark overlay so the photo is more dark */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.5) 70%, /* Fade background and Image together */
+        rgba(0, 0, 0, 0.9) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* all text in center */
+.hero-content {
     text-align: center;
-    margin-bottom: 4rem; 
+    z-index: 1;
 }
 
+/* hero content */
 .hero-content h1 {
-    color: white;
-    font-size: 3rem;
+    color: #faf8f5;
+    font-size: 5rem;
+    font-weight: 700;
     margin-bottom: 1rem;
-
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
 }
 
+/* p hero content styling */
 .hero-content p {
-    color: white;
+    color: #faf8f5;
     font-size: 1.3rem;
-    margin-bottom: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
+
 
 /* Products Section Styling */
 .products-section {
