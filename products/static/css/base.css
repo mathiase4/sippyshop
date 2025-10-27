@@ -17,15 +17,26 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar {
     background-color: #000;
+    position: sticky;
+    top:0;
+    z-index: 100;
     padding: 1rem 0;
+    margin: 1rem 31rem;
+    border-radius: 15px;
+    border: 1px solid #333;
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.3),
+        0 2px 4px rgba(255, 255, 255, 0.1) inset;
+
+
 }
 .nav-container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0.2rem;
 }
 /* logo styling */
 .logo {
@@ -34,14 +45,16 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.5rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
+    margin-right: 3rem;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
     gap: 2.5rem;
-    margin: 0;
+    margin: 0rem;
     padding: 0;
+    
 }
 
 
@@ -60,6 +73,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     gap: 1rem;
     align-items: center;
+    margin-left: 4rem;
 }
 .auth-btn {
     padding: 0.5rem 1.2rem;
@@ -72,11 +86,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-user {
     color: #faf8f5;
-    margin-right: 0.2rem;
+    margin-right: 1rem;
 }
 
 .login-btn {
-    border: 2px solid white;
+    border: 1px solid white;
 
 }
 .login-btn:hover {
@@ -84,13 +98,12 @@ h1, h2, h3, h4, h5, h6 {
     color: #000;
 }
 .signup-btn {
-    background-color: white;
-    color: #000;
-    border: 2px solid #fff;
+    border: 1px solid white;
 }
 
 .signup-btn:hover {
-    background-color: #000;
+    background-color: #faf8f5;
+    color: #000;
 }
 
 .logout-btn {
