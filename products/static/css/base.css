@@ -21,12 +21,16 @@ h1, h2, h3, h4, h5, h6 {
     top:0;
     z-index: 100;
     padding: 1rem 0;
-    margin: 1rem 31rem;
+    margin: 1rem 36rem;
     border-radius: 15px;
-    border: 1px solid #333;
+    border: 1px solid #2a2a2a;
     box-shadow:
-        0 4px 6px rgba(0, 0, 0, 0.3),
-        0 2px 4px rgba(255, 255, 255, 0.1) inset;
+  /* SHADOW BOX HELP FROM HTTPS://WWW.W3SSCHOOLS.COM */
+        0 12px 24px rgba(0, 0, 0, 0.6),
+        0 6px 12px rgba(0, 0, 0, 0.4),
+        0 3px 6px rgba(255, 255, 255, 0.15) inset;
+        0 -1px 2px rgba(255, 255, 255, 0.05) inset;
+
 
 
 }
@@ -61,11 +65,12 @@ h1, h2, h3, h4, h5, h6 {
 .nav-links a {
     color: #faf8f5;
     text-decoration: none;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .nav-links a:hover {
     color: #fff;
+    text-decoration: underline;
 }
 
 /* aut buttons styling making space on navbar */
@@ -81,12 +86,14 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
     color: #faf8f5;
     font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
     
 }
 
 .nav-user {
     color: #faf8f5;
     margin-right: 1rem;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .login-btn {
@@ -112,8 +119,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logout-btn:hover {
-    background-color: #d9534f;
-    color: #fff;
+    background-color: #faf8f5;
+    color: #000;
 }
 
 /* HERO SECTION STYLING!! */
@@ -170,6 +177,8 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.3rem;
     max-width: 600px;
     margin: 0 auto;
+    font-weight: 400;
+    line-height: 1.6;
 }
 
 /* Button in hero section */
