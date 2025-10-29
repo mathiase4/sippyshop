@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 15px;
     border: 1px solid #2a2a2a;
     box-shadow:
-  /* SHADOW BOX HELP FROM HTTPS://WWW.W3SSCHOOLS.COM */
+  /* SHADOW BOX HELP FROM HTTPS://WWW.W3SCHOOLS.COM/CSS/CSS3_SHADOWS_BOX.ASP */
         0 12px 24px rgba(0, 0, 0, 0.6),
         0 6px 12px rgba(0, 0, 0, 0.4),
         0 3px 6px rgba(255, 255, 255, 0.15) inset;
@@ -66,11 +66,13 @@ h1, h2, h3, h4, h5, h6 {
     color: #faf8f5;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
+    display: inline-block; /* so i can make hover effect */
+    transition: all 0.3s; /* smooth hover effect */
 }
 
 .nav-links a:hover {
     color: #fff;
-    text-decoration: underline;
+    transform: scale(1.1);
 }
 
 /* aut buttons styling making space on navbar */
@@ -87,6 +89,8 @@ h1, h2, h3, h4, h5, h6 {
     color: #faf8f5;
     font-weight: 500;
     font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    transition: all 0.3s;
     
 }
 
@@ -103,6 +107,7 @@ h1, h2, h3, h4, h5, h6 {
 .login-btn:hover {
     background-color: #faf8f5;
     color: #000;
+    transform: scale(1.05);
 }
 .signup-btn {
     border: 1px solid white;
@@ -111,6 +116,7 @@ h1, h2, h3, h4, h5, h6 {
 .signup-btn:hover {
     background-color: #faf8f5;
     color: #000;
+    transform: scale(1.05);
 }
 
 .logout-btn {
@@ -121,6 +127,7 @@ h1, h2, h3, h4, h5, h6 {
 .logout-btn:hover {
     background-color: #faf8f5;
     color: #000;
+    transform: scale(1.05);
 }
 
 /* HERO SECTION STYLING!! */
@@ -146,9 +153,9 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     background: radial-gradient(
         ellipse at center,
-        rgba(0, 0, 0, 0.3) 0%,
-        rgba(0, 0, 0, 0.5) 70%, /* Fade background and Image together */
-        rgba(0, 0, 0, 0.9) 100%
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0.79) 70%, /* Fade background and Image together */
+        rgba(0, 0, 0, 0.99) 100%
     );
     display: flex;
     align-items: center;
