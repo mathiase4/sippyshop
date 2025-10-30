@@ -212,6 +212,20 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #1a1511;
     border: 1px solid #2a2520;
     transition: transform 0.2; /* smooth hover effect to make it more alive */
+    box-shadow:
+     0 12px 24px rgba(0, 0, 0, 0.6),
+     0 6px 12px rgba(0, 0, 0, 0.4),
+     0 3px 6px rgba(255, 255, 255, 0.15) inset;
+     0 -1px 2px rgba(255, 255, 255, 0.05) inset;
+     display: flex;
+     flex-direction: column;
+     height: 100%; /* ensure cards are same height */
+
+}
+
+.products-section h1 {
+    text-align: center;
+    margin-bottom: 3rem;;
 }
 
 .card:hover {
