@@ -48,5 +48,39 @@
         {% block content %}
         {% endblock %}
       </div>
+      <!-- Footer -->
+       <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-content">
+
+            <div class="footer-section">
+            <h4>SippyShop</h4>
+            <p>Your destination for beautiful handpicked mugs</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="/">Home</a></li>
+              <li><a href="{% url 'product_list' %}">Products</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-x"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 SippyShop. All rights reserved.</p>
+        </div>
+        </div>
+       </footer>
 </body>
 </html>
