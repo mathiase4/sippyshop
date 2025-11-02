@@ -12,3 +12,23 @@ class Product(models.Model):
     def __str__(self):
         return self.name
     
+
+class Order(models.Model):
+    """
+    Model for customer orders.
+    """
+    # order status choice 
+    STATUS_CHOICES = {
+        ('pending', 'Pending'),
+        ('processing', 'Processing'),
+        ('completed', 'Completed'),
+        ('cancelled', 'Cancelled'),
+    }
+    
+    #Customer information
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='orders')
+    full_name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone = models.CharField(max_length=20)
+    
+    
