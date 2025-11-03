@@ -20,10 +20,10 @@ def product_list(request):
     return render(request, 'products/product_list.html', {'products': products})
 
 
-def product_detail(request, pk):
+def product_detail(request, product_id):
     """
     View to show individual product details."""
-    product = get_object_or_404(Product, pk=pk)
+    product = Product.objects.get(id=product_id)
     return render(request, 'products/product_detail.html', {'product': product})
 
 

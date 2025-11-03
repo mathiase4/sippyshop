@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+<div class="product-detail-container">
+    <!-- back to product link -->
+     <a href="{% url 'product_list' ‰}" class="back-link">
+        ← Back to Products
+    </a>
+
+    <div class="product-detail">
+        <!-- product image -->
+         <div class=""product-image">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            {% endif %}
+    </div>
+
+    <!-- product information -->
+    <div class="product-info">
+        <h1>{{ product.name }}</h1>
+        <p class="product-price">${{ product.price }}</p>
+        <p class="product-description">{{ product.description }}</p>
+
+        <div class="quantity-selector">
+            <label for="quantity">Quantity:</label>
+            <div class="quantity-controls">
+                <buttom type="button" class="qty-btn" id="decrease">-</button>
+                    <input type="number" id="quantity" name="quantity" value="1" min="1">
+                    <button type="button" class="qty-btn" id="increase">+</button>
+    </div>
+</div>
+
+<!-- add to cart button -->
+ <form method="POST" action"#"></form>
+ {% csrf_token %}
+    <input type="hidden" name="product_id" value="{{ product.id }}">
+    <input type="hidden" name="quantity" id="quantity-hidden" value="1">
+    <button type="submit" class="btn-add-cart">Add to Cart</button>
+       </form>
+      </div>
+   </div>
+ </div>
+ {% endblock %}
+
+ 
