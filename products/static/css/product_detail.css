@@ -2,29 +2,34 @@
 .product-detail-container {
     max-width: 1200px;
     margin: 2rem auto;
-    padding: o 2rem;
+    padding: 0 2rem;
 }
 
-/* back link */
+/* back to products link button */
 .back-link {
     display: inline-block;
-    color: #faf8f5;
+    padding: 0.6rem 1.5rem;
+    background-color: white;
+    color: #000;
     text-decoration: none;
-    margin-bottom: 2rem;
+    font-weight: 600;
     font-size: 1rem;
-    transition: color 0.3s;
+    border-radius: 5px;
+    transition: all 0.3s;
+    margin-bottom: 2rem;
 
 }
 
 .back-link:hover {
-    color: #fff;
+    background-color: #f0f0f0;
+    transform: scale(1.05);
 }
 
 /* product detail layout */
 
 .product-detail {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
     gap: 4rem;
     background-color: #1a1511;
     border: 1px solid #2a2520;
@@ -32,17 +37,25 @@
     padding: 3rem;
     box-shadow:
     0 12px 24px rgba(0, 0, 0, 0.6),
-    0 6px 12px rgba(0, 0, 0, 0, 0.4),
+    0 6px 12px rgba(0, 0, 0, 0.4),
     0 3px 6px rgba(255, 255, 255, 0.15) inset,
     0 -1px 2px rgba(255, 255, 255, 0.05) inset;
 }
 
-/* product image */
+/* product image style it the same has product list cards */
 .product-image img {
     width: 100%;
     height: auto;
     border-radius: 10px;
     object-fit: cover;
+    background-color: #1a1511;
+    border: 1px solid #2a2520;
+    padding: 1rem;
+    box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.6),
+    0 6px 12px rgba(0, 0, 0, 0.4),
+    0 3px 6px rgba(255, 255, 255, 0.15) inset,
+    0 -1px 2px rgba(255, 255, 255, 0.05) inset;
 }
 
 .product-price {
