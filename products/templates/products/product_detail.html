@@ -10,13 +10,14 @@
 {% block content %}
 <div class="product-detail-container">
     <!-- back to product link -->
-     <a href="{% url 'product_list' ‰}" class="back-link">
+     <a href="{% url 'product_list' %}" class="back-link">
         ← Back to Products
     </a>
 
     <div class="product-detail">
         <!-- product image -->
-         <div class=""product-image">
+         <div class="product-image">
+            {% if product.image %}
             <img src="{{ product.image.url }}" alt="{{ product.name }}">
             {% endif %}
     </div>
@@ -30,14 +31,14 @@
         <div class="quantity-selector">
             <label for="quantity">Quantity:</label>
             <div class="quantity-controls">
-                <buttom type="button" class="qty-btn" id="decrease">-</button>
+                <button type="button" class="qty-btn" id="decrease">-</button>
                     <input type="number" id="quantity" name="quantity" value="1" min="1">
                     <button type="button" class="qty-btn" id="increase">+</button>
     </div>
 </div>
 
 <!-- add to cart button -->
- <form method="POST" action"#"></form>
+ <form method="POST" action="#">
  {% csrf_token %}
     <input type="hidden" name="product_id" value="{{ product.id }}">
     <input type="hidden" name="quantity" id="quantity-hidden" value="1">

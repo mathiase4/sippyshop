@@ -10,6 +10,7 @@
  <div class="row justify-content-center">
     {% for product in products %}
     <div class="col-md-4 mb-4">
+        <a href="{% url 'product_detail' product.id %}" class="product-card-link">
         <div class="card">
             {% if product.image %}
             <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
@@ -20,6 +21,7 @@
             <p class="fw-bold">${{ product.price }}</p>
         </div>
         </div>
+        </a>
     </div>
     {% endfor %}
  </div>
