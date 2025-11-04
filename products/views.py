@@ -104,3 +104,36 @@ def remove_from_cart(request, product_id):
     
     return redirect('view_cart')
     
+    
+def checkout(request):
+    """
+    Display checkout page with order form.
+    """
+    # Redirect if cart is empty
+    if not cart:
+        messages.warning(request, 'Your cart is empty!')
+        return redirect('product_list')
+    # Calculate cart items and total
+    
+    cart_items = []
+    total = 0
+    
+    for product_id, quantity in cart.items():
+        try:
+            product = Product.objects.get(id=product_id)
+            item_total = product.price * quantity
+            total += item_total
+            cart_items.append({
+                'product': product,
+                'quantity': quantity,
+                'item_total': item_total
+            })
+        except Product.DoesNotExist:
+            continue
+        
+        context = {
+            'cart_items': cart_items,
+            'total': total,
+        }
+        
+        return render(request, 'products/checkout.html', context)
