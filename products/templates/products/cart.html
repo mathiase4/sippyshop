@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Shopping Cart{% endblock %}
+
+{% block content %}
+<div class="cart-container">
+    <h1>Your Shopping Cart</h1>
+
+    {% if cart %}
+    <div class="cart-items">
+        {% for product_id, item in cart.items %}
+        <div class="cart-item">
+            <!-- product image here -->
+             <div class="cart-item-image">
+                {% if item.image %}
+                <img src="{{ item.image }}" alt="{{ item.name }}">
+                {% endif %}
+             </div>
+
+             <!-- product info here -->
+              <div class="cart-item-info">
+                <h3>{{ item.name }}</h3>
+                <p class="cart-item-price">${{ item.price }}</p>
+              </div>
+
+              <!-- Quantity Controls here-->
+               <div class="cart-item-quantity">
+                <from method="POST" action="{% url 'update_cart' product_id %}">
+                    {% csrf_token %}
+                    <label>Quantity:</label>
+                    <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="10">
+                    <button type="submit" class="btn-update">Update</button>
+                </from>
+               </div>
+
+               <!-- Subtotal here -->
+                <div class="cart-item-subtotal">
+                    <p>Subtotal:</p>
+                    <p class="subtotal-amount">${{ item.price|floatformat:2 }}</p>
+                </div>
+
+                <!-- remove button here-->
+                 <div class="cart-item-remove">
+                    <form method="POST" action="{% url 'remove_from_cart' product_id %}">
+                     {% csrf_token %}
+                     <button type="submit" class="btn-remove">Remove</button>
+                    </form> 
+                 </div>
+           </div>
+           {% endfor %}
+    </div>
+
+    <!-- cart total here -->
+     <div class="cart-total">
+        <h2>Total: ${{ total|floatformat:2 }}</h2>
+        <a href="#" class="btn-checkout">Proceed to Checkout</a>
+        <a href="{% url 'product_list' %}" class="btn-continue">Continue Shopping</a>
+     </div>
+     {% else %}
+     <!-- Empty cart here -->
+      <div class="empty-cart">
+        <p>Your cart is empty!</p>
+        <a href="{% url 'product_list' %}" class="btn-shop">Start Shopping</a>
+      </div>
+      {% endif %}
+      </div>
+      {% endblock %}

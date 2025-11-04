@@ -27,12 +27,80 @@ def product_detail(request, product_id):
     return render(request, 'products/product_detail.html', {'product': product})
 
 
-def add_to_bag(request, pk):
+def add_to_cart(request, product_id):
     """
-    add a product to the shopping bag."""
-    if request.method == 'POST':
-        bag = request.session.get('bag', {})
-        key = str(pk)
-        bag[key] = bag.get(key, 0) + 1
-        request.session['bag'] = bag
-        return redirect(request.META.get('HTTP_REFERER', 'products_list'))
+    Add product to shopping cart.
+    """
+    product = Product.objects.get(id=product_id)
+    cart = request.session.get('cart', {})
+    
+    # Get quantity from form (default 1)
+    quantity = int(request.POST.get('quantity', 1))
+    
+    # if product already in cart, increase quantity
+    if str(product_id) in cart:
+        cart[str(product_id)] += quantity
+    else:
+        cart[str(product_id)] = {
+            'name': product.name,
+            'price': str(product.price),
+            'quantity': quantity,
+            'image': product.image.url if product.image else None
+        }
+        
+    # save cart to session
+    request.session['cart'] = cart
+    request.session.modified = True
+    
+    #Redirect back to product detail
+    return redirect('product_detail', product_id=product_id)
+
+def view_cart(request):
+    """
+    display shopping cart.
+    """
+    cart = request.session.get('cart', {})
+    
+    # calculate total
+    total = 0
+    for item in cart.values():
+        total += float(item['price']) * item['quantity']
+        
+    content = {
+        'cart': cart,
+        'total': total
+    }
+    return render(request, 'products/cart.html', context)
+
+def update_cart(request, product_id):
+    """
+    Update product quantity in cart.
+    """
+    cart = request.session.get('cart', {})
+    quantity = int(request.POST.get('quantity', 1))
+    
+    if str(product_id) in cart:
+        if quantity > 0:
+            cart[str(product_id)]['quantity'] = quantity
+        else:
+            del cart[str(product_id)]
+            
+    request.session['cart'] = cart
+    request.session.modified = True
+    
+    return redirect('view_cart')
+
+def remove_from_cart(request, product_id):
+    """
+    Remove product from cart.
+    """
+    cart = request.session.get('cart', {})
+    
+    if str(product_id) in cart:
+        del cart[str(product_id)]
+        
+    request.session['cart'] = cart
+    request.session.modified = True
+    
+    return redirect('view_cart')
+    
