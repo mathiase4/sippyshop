@@ -1,0 +1,228 @@
+/* shopping cart page styling */
+.cart-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.cart-container h1 {
+    color: #faf8fa;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* cart items */
+.cart-items {
+    margin-bottom: 3rem;
+}
+
+/* individual cart item */
+.cart-item {
+    display: grid;
+    grid-template-columns: 150px 2fr 1fr 1fr auto;
+    gap: 2rem;
+    align-items: center;
+    background-color: #1a1511;
+    border: 1px solid #2a2520;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow:
+    0 8px 16px rgba(0, 0, 0, 0.5),
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    0 2px 4px rgba(255, 255, 255, 0.1) inset;
+}
+
+/* cart item image */
+.cart-item-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+
+}
+
+/* cart item info */
+.cart-item-info h3 {
+    color: #faf8fa;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.cart-item-price {
+    color: #d4c9bb;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* quantity form */
+.cart-item-quantity {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.quantity-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.quantity-form label {
+    color: #faf8fa;
+    font-size: 0.9rem;
+}
+
+.quantity-form input {
+    width: 70px;
+    padding: 0.5rem;
+    background-color: #2a2520;
+    color: #faf8fa;
+    border: 1px solid #3a3530;
+    border-radius: 5px;
+    text-align: center;
+}
+.btn-update {
+    padding: 0.5rem 1rem;
+    background-color: #3a3530;
+    color: #faf8f5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-update:hover {
+    background-color: #4a4540;
+    transform: scale(1.05);
+}
+/* subtotal here */
+.cart-item-subtotal {
+text-align: right;
+}
+
+.cart-item-subtotal p {
+    color: #d4c9bb;
+    margin: 0;
+}
+
+.subtotal-amount {
+    color: #faf8f5;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+/* remove button */
+.btn-remove {
+    padding: 0.5rem 1rem;
+    background-color: #8b0000;
+    color: #faf8f5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-remove:hover {
+    background-color: #a00000;
+    transform: scale(1.05);
+}
+
+/* cart total section */
+
+.cart-total {
+    background-color: #1a1511;
+    border: 1px solid #2a2520;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow:
+    0 8px 16px rgba(0, 0, 0, 0.5),
+    0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cart-total h2 {
+    color: #faf8f5;
+    margin-bottom: 2rem;
+}
+
+/* checkout button matches shop now button in hero section */
+.btn-checkout {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: white;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: all 0.3s;
+    margin: 0 1rem;
+}
+
+.btn-checkout:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+/* continue shopping button */
+.btn-continue {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #2a2520;
+    color: #faf8f5;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: all 0.3s;
+    margin: 0 1rem;
+}
+
+.btn-continue:hover {
+    background-color: #3a3530;
+    transform: scale(1.05);
+}
+
+/* empty cart */
+
+.empty-cart {
+    text-align: center;
+    padding: 5rem 2rem;
+}
+.empty-cart p {
+    color: #d4c9bb;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.btn-shop {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: white;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.btn-shop:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+/* responsive design */
+@media (max-width: 768px) {
+    .cart-item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .cart-item-image {
+        text-align: center;
+    }
+
+    .cart-item-subtotal {
+        text-align: left;
+    }
+}

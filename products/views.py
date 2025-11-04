@@ -39,7 +39,7 @@ def add_to_cart(request, product_id):
     
     # if product already in cart, increase quantity
     if str(product_id) in cart:
-        cart[str(product_id)] += quantity
+        cart[str(product_id)]['quantity'] += quantity
     else:
         cart[str(product_id)] = {
             'name': product.name,

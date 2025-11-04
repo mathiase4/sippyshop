@@ -50,6 +50,9 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     margin-right: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .nav-links {
@@ -74,7 +77,33 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
     transform: scale(1.1);
 }
-
+/* cart icon styling */
+.cart-icon {
+    position: relative;
+    color: #faf8f5 !important;
+    font-size: 1.5rem;
+    margin-right:2rem;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+.cart-icon:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+/* cart count badge */
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #fff;
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    min-width: 20px;
+    text-align: center;
+}
 /* aut buttons styling making space on navbar */
 .auth-buttons {
     display: flex;
