@@ -1,0 +1,47 @@
+/* checkout page styling */
+.checkout-item img {
+    max-height: 100px;
+    object-fit: cover;
+}
+
+.checkout-item {
+    transition: background-color 0.2s ease;
+}
+
+.checkout-item:hover {
+    background-color: #f8f9fa;
+}
+
+.card {
+    border-radius: 10px;
+}
+
+.card-header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* form styling */
+
+.form-control:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+/* button styling */
+.btn-success {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    border: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* responsive for other tablets */
+@media (max-width: 768px) {
+    .checkout-item .col-3,
+    .checkout-item .col-6,
+    .checkout-item .col-3 {
+        width: 100%;
+        text-align: center !important;
+        margin-bottom: 10px;
+    }
+}
