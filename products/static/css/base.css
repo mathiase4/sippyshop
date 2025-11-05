@@ -359,3 +359,34 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
+/* popup messages styling toast */
+
+.toast-container {
+    z-index: 9999;
+}
+
+.toast-custom {
+    min-width: 300px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5),
+                0 4px 8px rgba(0, 0, 0, 0.3),
+                0 2px 4px rgba(255, 255, 255, 0.1) inset;
+}
+
+.toast-custom .toast-body {
+    padding: 15px;
+    font-size: 15px;
+    color: #000;
+    display: flex;
+    align-items: center;
+}
+
+.toast-custom i {
+    font-size: 20px;
+}
+
+.toast-custom.hide {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}

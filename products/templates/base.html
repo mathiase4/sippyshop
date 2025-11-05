@@ -59,6 +59,27 @@
         {% block content %}
         {% endblock %}
       </div>
+      <!-- Pop out messages toasts -->
+       <div class="toast-container position-fixed top-0 end-0 p-3">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="toast show toast-custom" role="alert">
+          <div class="toast-body">
+            {% if message.tags == 'success' %}
+            <i class="fas fa-check-circle text-success me-2"></i>
+            {% elif message.tags == 'error' or message.tags == 'danger' %}
+            <i class="fas fa-times-circle text-danger me-2"></i>
+            {% elif message.tags == 'warning' %}
+            <i class="fas fa-exclamation-triangle text-warning me-2"></i>
+            {% else %}
+            <i class="fas fa-info-circle text-info me-2"></i>
+            {% endif %}
+            <span>{{ message }}</span>
+          </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+      </div>
       <!-- Footer -->
        <footer class="footer">
         <div class="footer-container">
@@ -94,5 +115,17 @@
         </div>
         </div>
        </footer>
+       <!-- toast js script -->
+       <script>
+        setTimeout(function() {
+          var toasts = document.querySelectorAll('.toast-custom');
+          toasts.forEach(function(toast) {
+            toast.classList.add('hide');
+            setTimeout(function() {
+              toast.style.display = 'none';
+            }, 500); // wait for fade out //
+          });
+        }, 4000); // show for 4 sec //
+       </script>
 </body>
 </html>

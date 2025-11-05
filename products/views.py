@@ -53,6 +53,9 @@ def add_to_cart(request, product_id):
     request.session['cart'] = cart
     request.session.modified = True
     
+    # show message
+    messages.success(request, f'{product.name} added to cart!')
+    
     #Redirect back to product detail
     return redirect('product_detail', product_id=product_id)
 
@@ -98,8 +101,11 @@ def remove_from_cart(request, product_id):
     cart = request.session.get('cart', {})
     
     if str(product_id) in cart:
+        product = Product.objects.get(id=product_id)
         del cart[str(product_id)]
+        messages.sucess(request, f'{product.name} removed!')
         
+
     request.session['cart'] = cart
     request.session.modified = True
     
