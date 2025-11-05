@@ -103,7 +103,7 @@ def remove_from_cart(request, product_id):
     if str(product_id) in cart:
         product = Product.objects.get(id=product_id)
         del cart[str(product_id)]
-        messages.sucess(request, f'{product.name} removed!')
+        messages.success(request, f'{product.name} removed!')
         
 
     request.session['cart'] = cart
