@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib import messages
 from .models import Product
 
 
@@ -66,7 +67,7 @@ def view_cart(request):
     for item in cart.values():
         total += float(item['price']) * item['quantity']
         
-    content = {
+    context = {
         'cart': cart,
         'total': total
     }
@@ -109,6 +110,8 @@ def checkout(request):
     """
     Display checkout page with order form.
     """
+    cart = request.session.get('cart', {})
+    
     # Redirect if cart is empty
     if not cart:
         messages.warning(request, 'Your cart is empty!')
@@ -118,10 +121,11 @@ def checkout(request):
     cart_items = []
     total = 0
     
-    for product_id, quantity in cart.items():
+    for product_id, item_data in cart.items():
         try:
             product = Product.objects.get(id=product_id)
-            item_total = product.price * quantity
+            quantity = item_data['quantity']
+            item_total = float(item_data['price']) * quantity
             total += item_total
             cart_items.append({
                 'product': product,
@@ -131,9 +135,9 @@ def checkout(request):
         except Product.DoesNotExist:
             continue
         
-        context = {
+    context = {
             'cart_items': cart_items,
             'total': total,
-        }
+    }
         
-        return render(request, 'products/checkout.html', context)
+    return render(request, 'products/checkout.html', context)

@@ -5,7 +5,7 @@
 
 {% block content %}
 <!-- link to cart.css -->
- <link rel="stylesheet" href="{% {% static 'css/cart.css' %}}">
+ <link rel="stylesheet" href="{% static 'css/cart.css' %}">
 <div class="cart-container">
     <h1>Your Shopping Cart</h1>
 
@@ -28,12 +28,12 @@
 
               <!-- Quantity Controls here-->
                <div class="cart-item-quantity">
-                <from method="POST" action="{% url 'update_cart' product_id %}">
+                <form method="POST" action="{% url 'update_cart' product_id %}">
                     {% csrf_token %}
                     <label>Quantity:</label>
                     <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="10">
                     <button type="submit" class="btn-update">Update</button>
-                </from>
+                </form>
                </div>
 
                <!-- Subtotal here -->
@@ -56,7 +56,7 @@
     <!-- cart total here -->
      <div class="cart-total">
         <h2>Total: ${{ total|floatformat:2 }}</h2>
-        <a href="#" class="btn-checkout">Proceed to Checkout</a>
+        <a href="{% url 'checkout' %}" class="btn-checkout">Proceed to Checkout</a>
         <a href="{% url 'product_list' %}" class="btn-continue">Continue Shopping</a>
      </div>
      {% else %}
