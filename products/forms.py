@@ -1,5 +1,5 @@
 from django import forms
-from django import Order
+from .models import Order
 
 class OrderForm(forms.ModelForm):
     """
@@ -7,13 +7,14 @@ class OrderForm(forms.ModelForm):
     """
     class Meta:
         model = Order
-        Fields = ['name', 'email', 'phone', 'address', 'city', 'postal_code', 'country']
+        fields = ['full_name', 'email', 'phone', 'address_line1', 'address_line2', 'city', 'postal_code', 'country']
         
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Full Name'}),
+            'full_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Full Name'}),
             'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email Address'}),
             'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Phone Number'}),
-            'address': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Street Address'}),
+            'address_line1': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Street Address 1'}),
+            'address_line2': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Street Address 2'}),
             'city': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'City'}),
             'postal_code': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Postal Code'}),
             'country': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Country'}),

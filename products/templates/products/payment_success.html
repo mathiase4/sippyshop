@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Order Confirmation{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="checkout-container">
+    <div class="success-message">
+        <i class="fas fa-check-circle success-icon"></i>
+        <h1>Order Confirmed!</h1>
+        <p>Thank you for your purchase!</p>
+    </div>
+
+    <div class="order-summary">
+        <h2>Order Details</h2>
+        <div class="order-info">
+         <p><strong>Order Number:</strong> #{{ order.id }}</p>
+         <p><strong>Name:</strong> {{ order.name }}</p>
+         <p><strong>Email:</strong> {{ order.email }}</p>
+         <p><strong>Total Amount:</strong> ${{ order.total_amount }}</p>
+         <p><strong>Status:</strong> <span class="badge bg-success">{{ order.status }}</span></p>
+        </div>
+
+        <div class="order-items">
+            <h3>Items Ordered:</h3>
+            {% for item in order.items.all %}
+            <div class="order-item">
+                <span>{{ item.product.name }} x {{ item.quantity }}</span>
+                <span>${{ item.price }}</span>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="{% url 'product_list' %}" class="btn btn-primary">Continue Shopping</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

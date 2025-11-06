@@ -150,6 +150,7 @@ def checkout(request):
         if form.is_valid():
             #create order
             order = form.save(commit=False)
+            order.user = request.user if request.user.is_authenticated else None 
             order.total_amount = total
             
             # create stripe payment here
@@ -195,5 +196,26 @@ def checkout(request):
         }
         
     return render(request, 'products/checkout.html', context)
+
+def payment_success(request, order_id):
+    """
+    Display payment success page
+    """
+    try:
+        order = Order.objects.get(id=order_id)
+        context = {'order': order}
+        return render(request, 'products/payment_success.html', context)
+    except Order.DoesNotExist:
+        messages.error(request, 'Order not found')
+        return redirect('product_list')
+    
+    
+def payment_cancel(request):
+    """
+    Display payment cancelled page
+    """
+    messages.warning(request, 'Payment was cancelled')
+    return redirect('view_cart')
+
         
 
