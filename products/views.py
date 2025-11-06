@@ -1,6 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
-from .models import Product
+from django.conf import settings
+import stripe 
+from .models import Product, Order, OrderItem
+from .forms import OrderForm
 
 
 def home(request):
@@ -114,7 +117,7 @@ def remove_from_cart(request, product_id):
     
 def checkout(request):
     """
-    Display checkout page with order form.
+    Display checkout page with Stripe Payment.
     """
     cart = request.session.get('cart', {})
     
@@ -141,9 +144,56 @@ def checkout(request):
         except Product.DoesNotExist:
             continue
         
+        
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            #create order
+            order = form.save(commit=False)
+            order.total_amount = total
+            
+            # create stripe payment here
+            stripe.api_key = settings.STRIPE_SECRET_KEY
+            
+            try:
+                intent = stripe.PaymentIntent.create(
+                    amount=int(total * 100), # stripe uses cents
+                    currency=settings.STRIPE_CURRENCY,
+                    metadata={'order_id': order.id}
+                )
+                
+                order.stripe_payment_intent = intent.id 
+                order.save()
+                
+                # Save order items 
+                for item in cart_items:
+                    OrderItem.objects.create(
+                        order=order,
+                        product=item['product'],
+                        quantity=item['quantity'],
+                        price=item['product'].price
+                    )
+                    
+                    # clear cart
+                    request.session['cart'] = {}
+                    
+                    messages.success(request, ' Order pleaced successfully!')
+                    return redirect('payment_success', order_id=order.id)
+                
+            except stripe.error.StripeError as e:
+                messages.error(request, f'x Payment error: {str(e)}')
+                
+    else:
+        form = OrderForm()
+            
+            
     context = {
             'cart_items': cart_items,
             'total': total,
-    }
+            'form': form,
+            'stripe_public_key': settings.STRIPE_PUBLIC_KEY,
+        }
         
     return render(request, 'products/checkout.html', context)
+        
+
