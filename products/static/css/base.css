@@ -251,6 +251,9 @@ h1, h2, h3, h4, h5, h6 {
      height: 100%; /* ensure cards are same height */
 
 }
+.product-card-link {
+    text-decoration: none;
+}
 
 .products-section h1 {
     text-align: center;
@@ -389,4 +392,34 @@ h1, h2, h3, h4, h5, h6 {
 .toast-custom.hide {
     opacity: 0;
     transition: opacity 0.5s ease-out;
+}
+
+/* scroll to top button */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #2a2520;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-top-btn:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.1);
+}
+
+.scroll-top-btn.show {
+    opacity: 1;
+    visibility: visible;
 }
