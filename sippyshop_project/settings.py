@@ -170,3 +170,8 @@ CLOUDINARY_STORAGE = {
 
 # DEFAULT FILE STORAGE CLOUDINARY
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+# Stripe configuration
+STRIPE_PUBLIC_KEY = config('STRIPE_PUBLIC_KEY')
+STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
+STRIPE_CURRENCY = 'usd'
