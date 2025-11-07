@@ -100,19 +100,27 @@ def update_cart(request, product_id):
 def remove_from_cart(request, product_id):
     """
     Remove product from cart.
+    if cart is empty after removed item, go to cart (empty cart)
+    if cart still has items, just refresh the page.
     """
     cart = request.session.get('cart', {})
+    product_id = str(product_id)
     
-    if str(product_id) in cart:
+    if product_id in cart:
         product = Product.objects.get(id=product_id)
-        del cart[str(product_id)]
+        del cart[product_id]
         messages.success(request, f'{product.name} removed!')
         
-
+    
     request.session['cart'] = cart
     request.session.modified = True
     
-    return redirect('view_cart')
+    # if cart goes empty
+    if not cart:
+        return redirect('view_cart')
+    
+    # else, stay on checkout
+    return redirect('checkout')
     
     
 def checkout(request):
