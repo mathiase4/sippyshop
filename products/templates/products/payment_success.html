@@ -28,16 +28,20 @@
         <div class="order-items">
             <h3>Items Ordered:</h3>
             {% for item in order.items.all %}
-            <div class="order-item">
-                <span>{{ item.product.name }} x {{ item.quantity }}</span>
-                <span>${{ item.price }}</span>
+            <div class="order-item-with-image">
+                <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="order-item-img">
+                <div class="order-item-details">
+                <span class="product-name">{{ item.product.name }}</span>
+                <span class="product-quantity">Quantity: {{ item.quantity }}</span>
+            </div>
+            <span class="product-price">${{ item.price }}</span>
             </div>
             {% endfor %}
-        </div>
-
-        <div class="text-center mt-4">
-            <a href="{% url 'product_list' %}" class="btn-hero">Continue Shopping</a>
+ 
+            <div class="text-center mt-4">
+                <a href="{% url 'product_list' %}" class="btn-hero">Continue Shopping</a>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 {% endblock %}

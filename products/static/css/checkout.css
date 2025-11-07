@@ -75,17 +75,6 @@
     margin-top: 2rem;
 }
 
-.order-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-    border-bottom: 1px solid #2a2520;
-    color: #faf8f5;
-}
-
-.order-item:last-child {
-    border-bottom: none;
-}
 
 #card-element {
     height: 40px;
