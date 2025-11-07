@@ -1,0 +1,56 @@
+/* success page styling */
+
+.success-message {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.success-icon {
+    font-size: 5rem;
+    color: #28a745;
+    margin-bottom: 1rem;
+}
+
+.order-info {
+    background-color: #1a1511;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.order-info p {
+    margin-bottom: 0.5rem;
+    color: #faf8f5;
+}
+
+.order-items {
+    margin-top: 2rem;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #2a2520;
+    color: #faf8f5;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+#card-element {
+    height: 40px;
+    padding-top: 10px;
+}
+
+/* responsive for other tablets */
+@media (max-width: 768px) {
+    .checkout-item .col-3,
+    .checkout-item .col-6,
+    .checkout-item .col-3 {
+        width: 100%;
+        text-align: center !important;
+        margin-bottom: 10px;
+    }
+}

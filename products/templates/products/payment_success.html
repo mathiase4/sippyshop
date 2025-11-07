@@ -4,11 +4,11 @@
 {% block title %}Order Confirmation{% endblock %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/checkout.css' %}">
+<link rel="stylesheet" href="{% static 'css/payment_success.css' %}">
 {% endblock %}
 
 {% block content %}
-<div class="checkout-container">
+<div class="checkout-container text-center">
     <div class="success-message">
         <i class="fas fa-check-circle success-icon"></i>
         <h1>Order Confirmed!</h1>
@@ -36,7 +36,7 @@
         </div>
 
         <div class="text-center mt-4">
-            <a href="{% url 'product_list' %}" class="btn btn-primary">Continue Shopping</a>
+            <a href="{% url 'product_list' %}" class="btn-hero">Continue Shopping</a>
         </div>
     </div>
 </div>

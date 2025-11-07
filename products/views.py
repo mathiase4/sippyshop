@@ -178,7 +178,7 @@ def checkout(request):
                     # clear cart
                     request.session['cart'] = {}
                     
-                    messages.success(request, ' Order pleaced successfully!')
+                    messages.success(request, ' Order placed successfully!')
                     return redirect('payment_success', order_id=order.id)
                 
             except stripe.error.StripeError as e:
