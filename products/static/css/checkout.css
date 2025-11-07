@@ -86,3 +86,8 @@
 .order-item:last-child {
     border-bottom: none;
 }
+
+#card-element {
+    height: 40px;
+    padding-top: 10px;
+}

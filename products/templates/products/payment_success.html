@@ -19,7 +19,7 @@
         <h2>Order Details</h2>
         <div class="order-info">
          <p><strong>Order Number:</strong> #{{ order.id }}</p>
-         <p><strong>Name:</strong> {{ order.name }}</p>
+         <p><strong>Name:</strong> {{ order.full_name }}</p>
          <p><strong>Email:</strong> {{ order.email }}</p>
          <p><strong>Total Amount:</strong> ${{ order.total_amount }}</p>
          <p><strong>Status:</strong> <span class="badge bg-success">{{ order.status }}</span></p>
