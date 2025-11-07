@@ -5,12 +5,12 @@
 
 {% block content %}
 <div class="row justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-6 login-page-text">
         <h2>Login</h2>
         <form method="post">
             {% csrf_token %}
             {{ form|crispy }}
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary page-login-style">Login</button>
         </form>
         <p class="mt-3">No account? <a href="{% url 'account_signup' %}">Signup here</a></p>
     </div>

@@ -218,6 +218,32 @@ h1, h2, h3, h4, h5, h6 {
     
 }
 
+/* login page styling */
+.login-page-text,
+.login-page-text p,
+.login-page-text {
+    color: #faf8f5;
+}
+/* login page make all links white */
+.login-page-text a {
+    color: #faf8f5;
+}
+/* LOGIN BUTTON IN LOGIN PAGE */
+.page-login-style {
+    background-color: #000;
+    color: #faf8f5;
+    border: 1px solid #faf8f5;
+   
+}
+.page-login-style:hover {
+    background-color: #faf8f5;
+    color: #000;
+    border: 1px solid #faf8f5;
+    transition: all 0.3s;
+    transform: scale(1.05);    
+}
+
+
 /* HERO SECTION STYLING!! */
 
 .hero-section {
@@ -481,4 +507,33 @@ h1, h2, h3, h4, h5, h6 {
 .scroll-top-btn.show {
     opacity: 1;
     visibility: visible;
+}
+
+/* PASSWORD RESET PAGE */
+.auth-box,
+.auth-box p {
+    color: #faf8f5;
+}
+.auth-box a {
+    color: #faf8f5;
+}
+
+.auth-page {
+    min-height: 45vh;
+    align-items: center;
+    justify-content: center;
+}
+/* send it button */
+.send-it-link {
+    background-color: #000;
+    color: #faf8f5;
+    border: 1px solid #faf8f5;
+}
+.send-it-link:hover {
+    background: #faf8f5;
+    transition: all 0.3s;
+    transform: scale(1.05);
+    color: #000;
+    border: 1px solid #faf8f5;
+    
 }
