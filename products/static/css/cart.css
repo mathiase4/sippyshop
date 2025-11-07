@@ -166,7 +166,7 @@ text-align: right;
 .btn-checkout:hover {
     background-color: #f0f0f0;
     transform: scale(1.05);
-}
+} 
 
 /* continue shopping button */
 .btn-continue {
@@ -208,12 +208,12 @@ text-align: right;
     font-weight: 600;
     font-size: 1.2rem;
     border-radius: 5px;
-    transition: all 0.3s;
+    transition: all 0.3s; 
 }
 
 .btn-shop:hover {
     background-color: #f0f0f0;
-    transform: scale(1.05);
+    transform: scale(1.05); 
 }
 
 /* responsive design */

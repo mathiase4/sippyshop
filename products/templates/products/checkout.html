@@ -12,8 +12,8 @@
     <div class="row g-4">
         <!-- order summary here-->
          <div class="col-md-7 mb-4">
-            <div class="card shadow-sm">
-                <div class="card-header bg-primary text-white">
+            <div class="card shadow-sm order-summary-card">
+                <div class="card-header bg-dark text-white">
                     <h4 class="mb-0">Order Summary</h4>
                 </div>
                 <div class="card-body">
@@ -42,7 +42,7 @@
                             <h4>Total:</h4>
                         </div>
                         <div class="col-4 text-end">
-                            <h4 class="text-primary">${{ total }}</h4>
+                            <h4 class="text-amount">${{ total }}</h4>
                         </div>
                     </div>
                 </div>
@@ -51,8 +51,8 @@
 
          <!-- checkout form right side here-->
           <div class="col-md-5">
-            <div class="card shadow-sm">
-                <div class="card-header bg-success text-white">
+            <div class="card shadow-sm shipping-card">
+                <div class="card-header bg-dark text-white">
                     <h4 class="mb-0">Shipping Information</h4>
                 </div>
                 <div class="card-body">
@@ -69,7 +69,7 @@
                         <span id="spinner" class="spinner-border spinner-border-sm d-none" role="status"></span>
                      </button>
 
-                     <a href="{% url 'view_cart' %}" class="btn btn-outline-secondary w-100 mt-2">
+                     <a href="{% url 'view_cart' %}" class="btn sippy-btn w-100 mt-2">
                         <i class="fas fa-arrow-left"></i> Back to Cart
                         </a>
                     </form>

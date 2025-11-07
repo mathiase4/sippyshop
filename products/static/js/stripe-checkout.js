@@ -7,10 +7,10 @@
 // Stripe Card Element style configuration 
 const stripeCardStyle = {
     base: {
-        color: '#000',
+        color: '#fff',
         fontSize: '16px',
         '::placeholder': {
-            color: '#aab7c4'
+            color: '#d4c9bb'
         }
     },
     invalid: {
