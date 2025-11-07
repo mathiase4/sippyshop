@@ -158,6 +158,35 @@ h1, h2, h3, h4, h5, h6 {
     color: #000;
     transform: scale(1.05);
 }
+/* logout button when signing out */
+ .logout-page-button {
+    background-color: #000;
+    color: #faf8f5 !important;
+    transition: all 0.3s;
+    border-radius: 5px;
+    border: 1px solid #faf8f5;
+}
+.logout-page-button:hover {
+    background-color: #000;
+    color: #faf8f5;
+    transform: scale(1.05);
+    border: 1px solid white;
+}
+
+/* register page button */
+.register-page-button {
+    background-color: #000;
+    color: #faf8f5;
+    border: 1px solid white;
+    transition: all 0.3s;
+}
+
+.register-page-button:hover {
+    background-color: #faf8f5;
+    color: #000;
+    border: 1px solid white;
+    transform: scale(1.05);
+}
 
 /* HERO SECTION STYLING!! */
 
