@@ -100,8 +100,8 @@ def update_cart(request, product_id):
 def remove_from_cart(request, product_id):
     """
     Remove product from cart.
-    if cart is empty after removed item, go to cart (empty cart)
-    if cart still has items, just refresh the page.
+   if cart is empty after removal , go to cart
+   else go back to the page we came from (cart or checkout)
     """
     cart = request.session.get('cart', {})
     product_id = str(product_id)
@@ -119,8 +119,17 @@ def remove_from_cart(request, product_id):
     if not cart:
         return redirect('view_cart')
     
-    # else, stay on checkout
-    return redirect('checkout')
+    referer = request.META.get('HTTP_REFERER', '')
+    
+    if 'cart' in referer:
+        return redirect('view_cart')
+    
+    # come from checkout
+    if 'checkout' in referer:
+        return redirect('checkout')
+    
+   # fallback
+    return redirect('view_cart')
     
     
 def checkout(request):
