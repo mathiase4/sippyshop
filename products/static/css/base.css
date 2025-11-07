@@ -160,8 +160,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* logout button when signing out */
  .logout-page-button {
-    background-color: #000;
-    color: #faf8f5 !important;
+    background-color: #faf8f5;
+    color: #000;
     transition: all 0.3s;
     border-radius: 5px;
     border: 1px solid #faf8f5;
@@ -186,6 +186,36 @@ h1, h2, h3, h4, h5, h6 {
     color: #000;
     border: 1px solid white;
     transform: scale(1.05);
+}
+/* login here btn */
+.login-page-btn {
+    background-color: #faf8f5;
+    color: #000;
+    border: 1px solid white;
+    text-decoration: none;
+}
+.login-page-btn:hover {
+    background-color: #000;
+    color: #faf8f5;
+    transition: all 0.3s;
+
+}
+/* signout p text */
+.signout-text p {
+    color: #faf8f5;
+}
+/* all text white in register page site */
+.auth-box,
+.auth-box ul {
+    color: #faf8f5;
+}
+
+/* the login link if u already have an account */
+.auth-box a {
+    color: #faf8f5;
+}
+.auth-box a:hover {
+    
 }
 
 /* HERO SECTION STYLING!! */
