@@ -82,6 +82,11 @@
     font-weight: 600;
     transition: all 0.3s ease;
 }
+/* make all form text in shipping card white */
+.shipping-card,
+.shipping-card p {
+    color: #faf8f5;
+}
 
 #submit-button:hover {
     background-color: #faf8f5 !important;
