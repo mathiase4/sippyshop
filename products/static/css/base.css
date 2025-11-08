@@ -715,3 +715,71 @@ h1, h2, h3, h4, h5, h6 {
         transform: none;
     }
 }
+
+/* ==================TABLETS (ipad) 769-1024px================================ */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* navbar size on tablet here */
+
+    .container {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    .navbar {
+        margin: 1rem auto !important;
+        border-radius: 14px;
+        max-width: 80%;
+        padding: 1.6rem 2rem;
+    }
+
+    .nav-container {
+        max-width: 100%;
+    }
+
+    .nav-menu {
+        gap: 1.5rem;
+    }
+
+
+    .nav-links {
+        gap: 1.1rem;
+    }
+
+    .auth-buttons {
+        gap: .5rem;
+    }
+
+/* hero section */
+
+    .hero-section {
+        height: 78vh;
+    }
+
+    .hero-content h1 {
+        font-size: 4rem;
+        line-height: 1.05;
+    }
+
+    .hero-content p {
+        max-width: 520px;
+        font-size: 1.8rem;
+    }
+
+    /* BTN payment_success */
+    .btn-hero {
+        padding: 1.1rem 2rem;
+        font-size: 1.5rem;
+    }
+
+    /* toast messages so its more in center of screen */
+    .toast-container {
+        top: 90px !important;
+        right: 1rem !important;
+        left: auto !important;
+        width: auto;
+    }
+
+
+
+}
