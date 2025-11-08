@@ -2,8 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.conf import settings
 import stripe 
-from .models import Product, Order, OrderItem
-from .forms import OrderForm
+from .models import Product, Order, OrderItem, Review
+from .forms import OrderForm, ReviewForm
 from allauth.account.views import (
     PasswordResetView,
     PasswordResetDoneView,
@@ -32,9 +32,57 @@ def product_list(request):
 
 def product_detail(request, product_id):
     """
-    View to show individual product details."""
-    product = Product.objects.get(id=product_id)
-    return render(request, 'products/product_detail.html', {'product': product})
+    View to show individual product 
+    details and handles review form submissions.
+    """
+    product = get_object_or_404(Product, id=product_id)
+    
+    reviews = product.reviews.all().order_by('-created_at')
+    
+    # review code 
+    review_form = ReviewForm()
+    
+    if request.method == 'POST':
+        
+        
+        if not request.user.is_authenticated:
+            messages.error(request, 'You must be logged in to leave a review.')
+            return redirect('account_login')
+        
+        review_form = ReviewForm(data=request.POST)
+        
+        if review_form.is_valid():
+            
+            try:
+                Review.objects.get(user=request.user, product=product)
+                messages.error(request, 'You have already reviewed this product.')
+                
+            except Review.DoesNotExist:
+                
+                review = review_form.save(commit=False)
+                
+                # add user and product
+                review.user = request.user
+                review.product = product
+                
+                review.save() # save 
+                messages.success(request, 'Your review has been submitted!')
+                
+            return redirect('product_detail', product_id=product.id)
+        
+        else:
+            messages.error(request, 'Please correct the errors in the form.')
+            
+    
+    context = {
+        'product': product,
+        'reviews': reviews,
+        'review_form': review_form,
+    }
+    return render(request, 'products/product_detail.html', context)
+        
+       
+    
 
 
 def add_to_cart(request, product_id):
@@ -244,11 +292,7 @@ def payment_cancel(request):
 
 class MyPasswordResetView(PasswordResetView):
     template_name = 'account/password_reset.html'
-    
-    def form_valid(self, form):
-        messages.success(self.request, "If that email exists, we sent you a reset link.")
-        return super().form_valid(form)
-    
+        
     
 class MyPasswordResetDoneView(PasswordResetDoneView):
     template_name = 'account/password_reset_done.html'

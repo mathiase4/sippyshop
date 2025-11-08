@@ -71,3 +71,27 @@ class OrderItem(models.Model):
     def get_total_price(self):
         """ calculate total price """
         return self.quantity * self.price
+    
+    # product reviews
+class Review(models.Model):
+    
+    product = models.ForeignKey(Product, related_name='reviews', on_delete=models.CASCADE)
+    
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    
+    RATING_CHOICES = [
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+    ]
+    
+    rating = models.IntegerField(choices=RATING_CHOICES, default=5)
+    
+    comment = models.TextField(blank=True, null=True)
+    
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return f"{self.user.username} - {self.product.name}"

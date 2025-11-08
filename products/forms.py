@@ -1,5 +1,5 @@
 from django import forms
-from .models import Order
+from .models import Order, Review
 
 class OrderForm(forms.ModelForm):
     """
@@ -19,3 +19,10 @@ class OrderForm(forms.ModelForm):
             'postal_code': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Postal Code'}),
             'country': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Country'}),
         }
+        # create form to make reviews.
+class ReviewForm(forms.ModelForm):
+    
+    class Meta:
+        model = Review
+        
+        fields = ['rating', 'comment']

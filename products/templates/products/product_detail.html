@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block title %}{{ product.name }}{% endblock %}
 
@@ -47,6 +48,48 @@
        </form>
       </div>
    </div>
+   <!-- review section -->
+    <div class="review-section mt-5">
+        <h3 class="text-white">Leave a Review</h3>
+
+       {% if user.is_authenticated %}
+       <form method="POST" class="review-form">
+        {% csrf_token %}
+
+        {{ review_form|crispy }}
+
+        <button type="submit" class="btn btn-add-cart">Submit Review</button>
+       </form>
+
+       {% else %}
+       <p class="text-light">
+        You must be <a href="{% url 'account_login' %}?next={{ request.path }}">logged in</a> to leave a review.
+       </p>
+       {% endif %}
+    </div>
+
+    <div class="review-list mt-5">
+        <h3 class="text-white">What Our Customers Say ({{ reviews.count }})</h3>
+
+        {% if reviews %}
+        {% for review in reviews %}
+        <div class="card bg-dark text-white mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ review.user.username }}</h5>
+
+                <p class="card-text text-warning">
+                    Rating: {{ review.rating }} / 5 Stars
+                </p>
+                <p class="card-text">{{ review.comment }}</p>
+                
+                <small class="text-muted">{{ review.created_at|date:"Y-m-d" }}</small>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p class="text-light">This product has no reviews yet.</p>
+        {% endif %}
+    </div>
  </div>
  {% endblock %}
 
