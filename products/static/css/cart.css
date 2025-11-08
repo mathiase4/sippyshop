@@ -23,12 +23,12 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 85px 2fr 110px 95px auto;
-    gap: 0.8rem;
+    gap: 1.5rem;
     align-items: center;
     background-color: #1a1511;
     border: 1px solid #2a2520;
     border-radius: 10px;
-    padding: 0.9rem;
+    padding: 1.2rem;
     margin-bottom: 1rem;
     box-shadow:
     0 8px 16px rgba(0, 0, 0, 0.5),
@@ -72,7 +72,7 @@
 }
 
 .cart-item-quantity input {
-    width: 55px;
+    width: 45px;
     padding: 0.35rem;
     background-color: #2a2520;
     color: #faf8fa;
@@ -82,7 +82,7 @@
     font-size: 0.9rem;
 }
 .btn-update {
-    padding: 0.35rem 0.75rem;
+    padding: 0.45rem 0.44rem;
     background-color: #3a3530;
     color: #faf8f5;
     border: none;
@@ -90,6 +90,10 @@
     cursor: pointer;
     transition: all 0.3s;
     font-size: 0.85rem;
+    margin: 2px;
+    margin-left: 3.2rem;
+    
+    
 }
 
 .btn-update:hover {

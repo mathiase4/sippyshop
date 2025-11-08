@@ -325,6 +325,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.3s;
 }
 
+
 .btn-hero:hover {
     background-color: #f0f0f0;
     transform: scale(1.05);
@@ -568,6 +569,10 @@ h1, h2, h3, h4, h5, h6 {
     transition: 0.3s;
 }
 .nav-menu .cart-icon {
+    display: none;
+}
+
+.hidden-flag {
     display: none;
 }
 

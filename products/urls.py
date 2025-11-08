@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+    
 
 # URL patterns for the products app
 
@@ -18,4 +19,5 @@ urlpatterns = [
     path('checkout/', views.checkout, name='checkout'),
     path('payment/success/<int:order_id>/', views.payment_success, name='payment_success'),
     path('payment/cancel/', views.payment_cancel, name='payment_cancel'),
+
 ]

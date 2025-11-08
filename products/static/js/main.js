@@ -84,3 +84,4 @@ if (qtyInput && qtyHidden && qtyIncrease && qtyDecrease) {
 });
 
 }
+

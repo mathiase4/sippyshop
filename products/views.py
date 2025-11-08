@@ -4,6 +4,12 @@ from django.conf import settings
 import stripe 
 from .models import Product, Order, OrderItem
 from .forms import OrderForm
+from allauth.account.views import (
+    PasswordResetView,
+    PasswordResetDoneView,
+    PasswordResetFromKeyView,
+    PasswordResetFromKeyDoneView,
+)
 
 
 def home(request):
@@ -234,5 +240,36 @@ def payment_cancel(request):
     messages.warning(request, 'Payment was cancelled')
     return redirect('view_cart')
 
-        
+        # ================ DJANGO PASSWORD RESET =================
 
+class MyPasswordResetView(PasswordResetView):
+    template_name = 'account/password_reset.html'
+    
+    def form_valid(self, form):
+        messages.success(self.request, "If that email exists, we sent you a reset link.")
+        return super().form_valid(form)
+    
+    
+class MyPasswordResetDoneView(PasswordResetDoneView):
+    template_name = 'account/password_reset_done.html'
+    
+    def dispatch(self, request, *args, **kwargs):
+        messages.info(request, "check your email for the reset link.")
+        return super().dispatch(request, *args, **kwargs)
+    
+    
+class MyPasswordResetFromKeyView(PasswordResetFromKeyView):
+    template_name = 'account/password_reset_form_key.html'
+    
+    def form_valid(self, form):
+        messages.success(self.request, "Your password has ben changed.")
+        return super().form_valid(form)
+    
+    
+class MyPasswordResetFromKeyDoneView(PasswordResetFromKeyDoneView):
+    template_name = 'account/password_reset_from_key_done.html'
+    
+    def dispatch(self, request, *args, **kwargs):
+        messages.success(request, "Password reset is complete.")
+        return super().dispatch(request, *args, **kwargs)
+        

@@ -19,11 +19,34 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic.base import RedirectView
+from products.views import (
+    MyPasswordResetView,
+    MyPasswordResetDoneView,
+    MyPasswordResetFromKeyView,
+    MyPasswordResetFromKeyDoneView,
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('products.urls')),
     path('accounts/', include('allauth.urls')),
+    
+        # password send message
+    path('password/reset/',
+         MyPasswordResetView.as_view(),
+         name='account_reset_password'),
+    
+    path('password/reset/done/',
+         MyPasswordResetDoneView.as_view(),
+         name='account_reset_password_done'),
+    
+    path('password/reset/key/<uidb36>/<key>/',
+         MyPasswordResetFromKeyView.as_view(),
+         name='account_reset_password_from_key'),
+    
+    path('password/reset/key/done/',
+        MyPasswordResetFromKeyDoneView.as_view(),
+        name='account_reset_password_from_key_done'),
     
 ]
 # serving media files during development
