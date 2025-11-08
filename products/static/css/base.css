@@ -594,15 +594,18 @@ h1, h2, h3, h4, h5, h6 {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 70px;
+        top: 60px;
         flex-direction: column;
-        background-color: #1a1511;
         width: 100%;
-        text-align: center;
-        transition: 0.3s;
+        transition: left 0.3s ease;
+        background: rgba(0, 0, 0, 0.95);
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
         z-index: 1000;
-        padding: 2rem 0;
+        padding: 0.8rem 1rem 1rem;
+        border-bottom: 1px solid #2a2a2a;
+        min-height: 20vh;
+        gap: 0.6rem;
+        display: flex;
     }
     .toast-container {
         position: fixed !important;
@@ -619,12 +622,20 @@ h1, h2, h3, h4, h5, h6 {
 
     .nav-links {
         flex-direction: column;
+        align-items: center;
+        gap: 0.2rem;
         width: 100%;
-        margin-bottom: 1rem;
+    }
+    .nav-links a {
+        font-size: 1.05rem;
+        padding: 0.4rem 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
     }
 
     .nav-links li {
-        margin: 1rem 0;
+        margin: 0;
     }
 
     .auth-buttons {
