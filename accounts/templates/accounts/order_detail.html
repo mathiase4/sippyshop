@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container my-5 text-white">
+<div class="container my-5 text-white sippyshop-order-detail">
     <h2>Order #{{order.id }}</h2>
-    <p>Ordered on: {{ order.created_at||date:"Y-m-d H:i" }}</p>
+    <p>Ordered on: {{ order.created_at|date:"Y-m-d H:i" }}</p>
 
     <h4 class="mt-4">Items in Order:</h4>
     <ul class="list-group">
         {% for item in order.items.all %}
         <li class="list-group-item bg-secondary text-white d-flex justify-content-between align-items-center">
             {{ item.product.name }}
-            <span class="badge bg-primary rounded-pill">{{ item.quantity }} units @ ${{ item.price }}</span>
+            <span class="badge bg-light text-dark rounded-pill">{{ item.quantity }} units @ ${{ item.price }}</span>
         </li>
         {% endfor %}
     </ul>
-    <a href="{% url 'order_history' %}" class="btn btn-secondary mt-4"><i class="fas fa-arrow-left"></i> Back to History</a>
+    <a href="{% url 'order_history' %}" class="btn sippyshop-btn mt-4"><i class="fas fa-arrow-left"></i> Back to History</a>
 </div>
 {% endblock content %}

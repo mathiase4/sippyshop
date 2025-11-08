@@ -73,12 +73,28 @@ h1, h2, h3, h4, h5, h6 {
     
 }
 
+/* order history icon and link on navbar */
+.order-history-btn {
+    background: none;
+    border: none;
+    margin-right: 12px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.order-history-btn:hover {
+    transition: all 0.3s;
+    transform: scale(1.1);
+
+}
+
 
 .nav-links a {
     color: #faf8f5;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
-    display: inline-block; /* so i can make hover effect */
+    display: inline-block; 
     transition: all 0.3s; /* smooth hover effect */
 }
 
@@ -91,7 +107,7 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     color: #faf8f5 !important;
     font-size: 1.5rem;
-    margin-right:2rem;
+    margin-right:2.2rem;
     transition: all 0.3s;
     text-decoration: none;
 }
@@ -574,6 +590,75 @@ h1, h2, h3, h4, h5, h6 {
 
 .hidden-flag {
     display: none;
+}
+
+/*============== ORDER DETAIL ================== */
+.sippyshop-order-detail {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background-color: #2a2520;
+    padding: 15px 30px;
+    margin-bottom: 250px !important;
+    margin: o auto;
+    max-width: 700px;
+}
+
+.sippyshop-order-detail h4 {
+    padding-bottom: 5px;
+}
+.sippyshop-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.6rem 1.5rem;
+    background-color: white;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+.sippyshop-btn:hover {
+    background-color: white;
+    color: #000;
+    transform: scale(1.05);
+}
+
+/*==========================HERE IS ORDER HISTORY STYLING ======================*/
+
+.sippyshop-history {
+
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background-color: #2a2520;
+    padding: 20px 30px;
+    margin: 3rem auto;
+    max-width: 900px;
+}
+
+/* the order table */
+
+.sippyshop-history .table {
+    border: 1px solid #444;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.sippy-history-btn {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    background-color: white;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+.sippy-history-btn:hover {
+    background-color: #faf8f5;
+    color: #000;
+    transform: scale(1.05);
 }
 
 /*==================== MOBILE 768px ============================*/
