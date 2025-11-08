@@ -21,6 +21,7 @@ def order_detail(request, order_id):
     """
     show details on specific orders.
     """
+    
     order = get_object_or_404(Order, id=order_id, user=request.user)
     
     context = {
