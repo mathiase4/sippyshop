@@ -61,6 +61,7 @@
                 <div class="card-body">
                     <form method="POST" id="payment-form">
                     {% csrf_token %}
+                    <input type="hidden" name="payment_intent" id="payment_intent">
                     {{ form.as_p }}
                     <!-- stripe payment section  -->
                      <h5 class="mt-4 mb-3">Card Details</h5>
@@ -87,6 +88,7 @@
  <script>
     var stripePublicKey = '{{ stripe_public_key }}';
     var total_Amount = '{{ total }}';
+    var clientSecret = '{{ client_secret }}';
  </script>
  <!-- stripe checkout js -->
   <script src="{% static 'js/stripe-checkout.js' %}"></script>

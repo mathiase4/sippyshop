@@ -214,46 +214,50 @@ def checkout(request):
             })
         except Product.DoesNotExist:
             continue
-        
+    # set stripe api key
+    stripe.api_key = settings.STRIPE_SECRET_KEY
+    # create payment intent here
+    try:
+        intent = stripe.PaymentIntent.create(
+            amount=int(total * 100),
+            currency=settings.STRIPE_CURRENCY,
+        )
+    except stripe.error.StripeError as e:
+        messages.error(request, f'Error creating payment intent: {str(e)}')
+        return redirect('view_cart')
         
     if request.method == 'POST':
         form = OrderForm(request.POST)
+        
         if form.is_valid():
             #create order
             order = form.save(commit=False)
+            
+            order.stripe_payment_intent = request.POST.get('payment_intent')
+            
             order.user = request.user if request.user.is_authenticated else None 
             order.total_amount = total
-            
-            # create stripe payment here
-            stripe.api_key = settings.STRIPE_SECRET_KEY
-            
-            try:
-                intent = stripe.PaymentIntent.create(
-                    amount=int(total * 100), # stripe uses cents
-                    currency=settings.STRIPE_CURRENCY,
-                    metadata={'order_id': order.id}
+            order.save()
+
+                
+            # Save order items 
+            for item in cart_items:
+                OrderItem.objects.create(
+                    order=order,
+                    product=item['product'],
+                    quantity=item['quantity'],
+                    price=item['product'].price
                 )
-                
-                order.stripe_payment_intent = intent.id 
-                order.save()
-                
-                # Save order items 
-                for item in cart_items:
-                    OrderItem.objects.create(
-                        order=order,
-                        product=item['product'],
-                        quantity=item['quantity'],
-                        price=item['product'].price
-                    )
                     
-                    # clear cart
-                request.session['cart'] = {}
+            # clear cart
+            request.session['cart'] = {}
                     
-                messages.success(request, ' Order placed successfully!')
-                return redirect('payment_success', order_id=order.id)
-                
-            except stripe.error.StripeError as e:
-                messages.error(request, f'x Payment error: {str(e)}')
+            messages.success(request, ' Order placed successfully!')
+            return redirect('payment_success', order_id=order.id)
+        
+        else:
+            messages.error(request, 'Please check your shipping information.')
+            
                 
     else:
         form = OrderForm()
@@ -264,6 +268,7 @@ def checkout(request):
             'total': total,
             'form': form,
             'stripe_public_key': settings.STRIPE_PUBLIC_KEY,
+            'client_secret': intent.client_secret,
         }
         
     return render(request, 'products/checkout.html', context)
