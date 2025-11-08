@@ -216,17 +216,56 @@ text-align: right;
     transform: scale(1.05); 
 }
 
-/* responsive design */
+/* ================MOBILE STYLING====================================== */
 @media (max-width: 768px) {
     .cart-item {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
     .cart-item-image {
+        width: 120px;
+        margin-bottom: 0.5rem;
+    }
+    .cart-item-info h3,
+    .cart-item-price {
         text-align: center;
+    }
+    /* quantity */
+    .cart-item-quantity {
+        align-items: center;
     }
 
     .cart-item-subtotal {
-        text-align: left;
+        text-align: center;
+        margin-top: 0.5rem;
+    }
+    .cart-item-remove {
+        margin-top: 0.5rem;
+    }
+
+    /* easier to press the buttons */
+    .btn-update,
+    .btn-remove {
+        padding: 0.35rem 0.7rem;
+        font-size: 0.85;
+    }
+    .btn-checkout {
+        display: inline-block;
+        padding: 0.6rem 1.4rem;
+        background-color: white;
+        color: #000;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        border-radius: 5px;
+        margin: 0.8rem;
+    }
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-left: auto;
     }
 }

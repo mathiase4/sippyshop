@@ -29,7 +29,24 @@
         <a href="/" class="logo">
           <i class="fas fa-mug-hot"></i> SippyShop
         </a>
+        <!-- put checkout ikon in mobile navbar -->
+         <div class="nav-right">
+          <a href="{% url 'view_cart' %}" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            {% if request.session.cart %}
+            <span class="cart-count">{{ request.session.cart|length }}</span>
+            {% endif %}
+          </a>
+         
 
+        <!-- hamburger menu button (mobil only) -->
+         <button class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+         </button>
+
+         <div class="nav-menu" id="navMenu">
         <ul class="nav-links">
           <li><a href="/">Home</a></li>
           <li><a href="{% url 'product_list' %}">Products</a></li>
@@ -52,6 +69,7 @@
           <a href="{% url 'account_signup' %}" class="auth-btn signup-btn">Sign Up</a>
           {% endif %}
         </div>
+      </div>
       </div>
      </nav>
      <!-- main content -->

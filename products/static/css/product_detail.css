@@ -137,11 +137,39 @@
     background-color: #fff;
     transform: scale(1.02);
 }
-/* responsive design for smaller screens */
+/* ===================MOBILE STYLING================================= */
 @media (max-width: 768px) {
     .product-detail {
         grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 2rem;
+        gap: 1.5rem;
+        padding: 1.5rem 1.2rem;
+        border-radius: 8px;
+    }
+    .product-detail-container {
+        max-width: 300px;
+        margin: 1.5rem auto;
+        padding: 0 1rem;
+        text-align: center;
+    }
+    .product-image img {
+        max-width: 260px;
+        margin: 0 auto;
+        display: block;
+    }
+    .product-info {
+        text-align: center;
+    }
+    .quantity-controls {
+        justify-content: center;
+    }
+    .btn-add-cart {
+        width: 100%;
+        max-width: 280px;
+        margin: 1rem auto 0;
+        display: block;
+    }
+    .back-link {
+        margin-bottom: 1.5rem;
+        display: inline-block;
     }
 }

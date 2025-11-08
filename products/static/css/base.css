@@ -537,3 +537,139 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid #faf8f5;
     
 }
+
+/* Hamburger Menu styling */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #faf8f5;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+/*==================== MOBILE 768px ============================*/
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+    }
+    .navbar {
+        margin: 0;
+        border-radius: 0;
+        width: 100%;
+        padding: 0.6rem 1rem;
+    }
+    .nav-right {
+        margin-left: auto;
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.5rem;
+    }
+    .nav-right .cart-icon {
+        display: inline-block;
+        transform: translateY(9px);
+    }
+    /* Hide cart link that is inside mobile hamburger menu */
+    .nav-menu .cart-icon {
+        display: none !important;
+    }
+    }
+    .scroll-top-btn {
+        right: 15px;
+        bottom: 20px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: #1a1511;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        z-index: 1000;
+        padding: 2rem 0;
+    }
+    .toast-container {
+        position: fixed !important;
+        top: 70px !important;
+        right: 0 !important;
+        left: 0 !important;
+        width: calc(100% - 2rem);
+        margin: 0 auto;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    .auth-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        align-items: center;
+        margin-left: 0;
+    }
+    .cart-icon {
+        margin-bottom: 1rem;
+    }
+    /* HERO SECTION MAKE IT WORK */
+    .hero-section {
+        height: 70vh;
+        padding: 4rem 1rem 2rem;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+        line-height: 1.1;
+    }
+    .hero-content p {
+        font-size: 0.95rem;
+        max-width: 320px;
+    }
+
+    /* hamburger animation */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    /* remove transition and transform in phone and add click feeling instead */
+    .btn:active,
+    .sippy-btn:active,
+    .btn-hero:active {
+        transform: scale(0.98);
+    }
+    .btn:hover {
+        transform: none;
+    }
+}

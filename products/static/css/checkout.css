@@ -28,17 +28,6 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* responsive for other tablets */
-@media (max-width: 768px) {
-    .checkout-item .col-3,
-    .checkout-item .col-6,
-    .checkout-item .col-3 {
-        width: 100%;
-        text-align: center !important;
-        margin-bottom: 10px;
-    }
-}
-
 /* success page styling */
 
 .success-message {
@@ -135,4 +124,36 @@
     justify-content: flex-end;
     gap: 0.75rem;
     align-items: center;
+}
+
+/* ========================MOBILE RESPONSE FOR CHECKOUT==============*/
+@media (max-width: 768px) {
+    .checkout-item .col-3,
+    .checkout-item .col-6,
+    .checkout-item .col-3 {
+        width: 100%;
+        text-align: center !important;
+        margin-bottom: 10px;
+    }
+    .order-summary-card .d-flex {
+        justify-content: center;
+        gap: 0.75rem;
+        gap: 0.5rem;
+    }
+    .checkout-item .row {
+        flex-wrap: center;
+    }
+    .checkout-item .col-5,
+    .checkout-item .col-3,
+    .checkout-item .col-2 {
+        width: 100%;
+        text-align: center !important;
+        margin-top: 0.4rem;
+    }
+    /* center image */
+    .checkout-item img {
+        margin: 0 auto;
+        max-width: 120px;
+    }
+    
 }
