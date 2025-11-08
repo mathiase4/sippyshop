@@ -718,7 +718,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #000;
     transform: scale(1.05);
 }
-
+  
 /*==================== MOBILE 768px ============================*/
 @media (max-width: 768px) {
 

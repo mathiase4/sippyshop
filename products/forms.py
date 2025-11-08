@@ -1,10 +1,16 @@
 from django import forms
 from .models import Order, Review
+from django_countries.fields import CountryField
+from django_countries.widgets import CountrySelectWidget
 
 class OrderForm(forms.ModelForm):
     """
     Form for collecting customer information at checkout.
     """
+    country = CountryField(blank_label='(Select country)').formfield(
+        widget=CountrySelectWidget(attrs={'class:': 'form-select'})
+    )
+    
     class Meta:
         model = Order
         fields = ['full_name', 'email', 'phone', 'address_line1', 'address_line2', 'city', 'postal_code', 'country']
@@ -17,7 +23,7 @@ class OrderForm(forms.ModelForm):
             'address_line2': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Street Address 2'}),
             'city': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'City'}),
             'postal_code': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Postal Code'}),
-            'country': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Country'}),
+
         }
         # create form to make reviews.
 class ReviewForm(forms.ModelForm):

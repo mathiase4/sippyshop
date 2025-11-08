@@ -126,6 +126,7 @@
     align-items: center;
 }
 
+
 /* ========================MOBILE RESPONSE FOR CHECKOUT==============*/
 @media (max-width: 768px) {
     .checkout-item .col-3,

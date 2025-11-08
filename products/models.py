@@ -19,12 +19,12 @@ class Order(models.Model):
     Model for customer orders.
     """
     # order status choice 
-    STATUS_CHOICES = {
+    STATUS_CHOICES = [
         ('pending', 'Pending'),
         ('processing', 'Processing'),
         ('completed', 'Completed'),
         ('cancelled', 'Cancelled'),
-    }
+    ]
     
     #Customer information
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='orders')
