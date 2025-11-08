@@ -31,9 +31,18 @@ h1, h2, h3, h4, h5, h6 {
         0 3px 6px rgba(255, 255, 255, 0.15) inset,
         0 -1px 2px rgba(255, 255, 255, 0.05) inset;
 
-
-
 }
+
+.nav-right {
+    display: flex;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
 .nav-container {
     max-width: 1000px;
     margin: 0 auto;
@@ -58,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2.5rem;
+    gap: 1rem;
     margin: 0rem;
     padding: 0;
     
@@ -109,7 +118,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     gap: 1rem;
     align-items: center;
-    margin-left: 4rem;
+    margin-left: 0;
 }
 .auth-btn {
     padding: 0.5rem 1.2rem;
@@ -523,12 +532,14 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: center;
 }
+
 /* send it button */
 .send-it-link {
     background-color: #000;
     color: #faf8f5;
     border: 1px solid #faf8f5;
 }
+
 .send-it-link:hover {
     background: #faf8f5;
     transition: all 0.3s;
@@ -556,34 +567,43 @@ h1, h2, h3, h4, h5, h6 {
     margin: 3px 0;
     transition: 0.3s;
 }
+.nav-menu .cart-icon {
+    display: none;
+}
+
 /*==================== MOBILE 768px ============================*/
-/* Mobile Styles */
 @media (max-width: 768px) {
+
     .hamburger {
         display: flex;
         flex-direction: column;
     }
+
     .navbar {
         margin: 0;
         border-radius: 0;
         width: 100%;
         padding: 0.6rem 1rem;
     }
-    .nav-right {
+
+     .nav-right {
         margin-left: auto;
         display: flex !important;
         align-items: center !important;
         gap: 0.5rem;
     }
+
     .nav-right .cart-icon {
         display: inline-block;
         transform: translateY(9px);
     }
+
     /* Hide cart link that is inside mobile hamburger menu */
+
     .nav-menu .cart-icon {
         display: none !important;
     }
-    }
+
     .scroll-top-btn {
         right: 15px;
         bottom: 20px;
@@ -607,6 +627,7 @@ h1, h2, h3, h4, h5, h6 {
         gap: 0.6rem;
         display: flex;
     }
+
     .toast-container {
         position: fixed !important;
         top: 70px !important;
@@ -626,6 +647,7 @@ h1, h2, h3, h4, h5, h6 {
         gap: 0.2rem;
         width: 100%;
     }
+
     .nav-links a {
         font-size: 1.05rem;
         padding: 0.4rem 0;
@@ -645,24 +667,30 @@ h1, h2, h3, h4, h5, h6 {
         align-items: center;
         margin-left: 0;
     }
+
     .cart-icon {
         margin-bottom: 1rem;
     }
+
     /* HERO SECTION MAKE IT WORK */
+
     .hero-section {
         height: 70vh;
         padding: 4rem 1rem 2rem;
     }
+
     .hero-content h1 {
         font-size: 2rem;
         line-height: 1.1;
     }
+
     .hero-content p {
         font-size: 0.95rem;
         max-width: 320px;
     }
 
     /* hamburger animation */
+
     .hamburger.active span:nth-child(1) {
         transform: rotate(-45deg) translate(-5px, 6px);
     }
@@ -674,12 +702,15 @@ h1, h2, h3, h4, h5, h6 {
     .hamburger.active span:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -6px);
     }
+
     /* remove transition and transform in phone and add click feeling instead */
+
     .btn:active,
     .sippy-btn:active,
     .btn-hero:active {
         transform: scale(0.98);
     }
+
     .btn:hover {
         transform: none;
     }

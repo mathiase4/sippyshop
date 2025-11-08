@@ -23,12 +23,14 @@
        {% block extra_css %}{% endblock %}
 </head>
 <body>
+
     <!-- navigation bar -->
      <nav class="navbar">
       <div class="nav-container">
         <a href="/" class="logo">
           <i class="fas fa-mug-hot"></i> SippyShop
         </a>
+
         <!-- put checkout ikon in mobile navbar -->
          <div class="nav-right">
           <a href="{% url 'view_cart' %}" class="cart-icon">
@@ -45,22 +47,23 @@
           <span></span>
           <span></span>
          </button>
+         </div>
 
          <div class="nav-menu" id="navMenu">
         <ul class="nav-links">
           <li><a href="/">Home</a></li>
           <li><a href="{% url 'product_list' %}">Products</a></li>
-        </ul>
-
-        <div class="auth-buttons">
-          <!-- cart icon -->
-           <a href="{% url 'view_cart' %}" class="cart-icon">
+         <li>
+          <a href="{% url 'view_cart' %}" class="cart-icon">
             <i class="fas fa-shopping-cart"></i>
             {% if request.session.cart %}
             <span class="cart-count">{{ request.session.cart|length }}</span>
             {% endif %}
-           </a>
-           
+          </a>
+        </li>
+        </ul>
+        
+        <div class="auth-buttons">
           {% if user.is_authenticated %}
           <span class="nav-user">Hello, {{ user.username }}</span>
           <a href="{% url 'account_logout' %}" class="auth-btn logout-btn">Logout</a>
