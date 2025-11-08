@@ -804,6 +804,41 @@ h1, h2, h3, h4, h5, h6 {
     .btn:hover {
         transform: none;
     }
+    /* ============== order details and order history =======================*/
+    .sippyshop-order-detail,
+    .sippyshop-history {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 10px 10px;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .sippyshop-history .table {
+        font-size: 0.8rem;
+    }
+    .sippyshop-history h2 {
+        font-size: 1.5rem;
+    }
+
+    .sippyshop-history .table-responsive {
+        margin: 0 -15px;
+    }
+
+    .sippyshop-order-detail h2 {
+        font-size: 1.5rem;
+    }
+
+    .sippyshop-order-detail p {
+        font-size: 0.9rem;
+    }
+    .sippyshop-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    .sippyshop-order-detail .list-group-item {
+        padding: 10px 15px;
+    }
 }
 
 /* ==================TABLETS (ipad) 769-1024px================================ */
@@ -870,6 +905,59 @@ h1, h2, h3, h4, h5, h6 {
         width: auto;
     }
 
+    /* ============order details and order history on tablets================ */
+
+    .sippyshop-order-detail h2,
+    .sippyshop-history h2 {
+
+        font-size: 3rem;
+
+    }
+
+    .sippyshop-order-detail h4,
+    .sippyshop-history h4 {
+
+        font-size: 2rem;
+
+    }
+
+    .sippyshop-order-detail,
+    .sippyshop-history {
+        padding: 40px 50px;
+    }
+    .sippyshop-order-detail p,
+    .sippyshop-history p {
+        font-size: 1.5rem;
+    }
+
+    .footer {
+        margin-top: 8rem;
+    }
+
+    .footer-section h4 {
+        font-size: 1.4rem;
+    }
+
+    .footer-section p,
+    .footer-links a,
+    .footer-bottom p {
+        font-size: 1.6rem;
+    }
+
+    .navbar {
+        padding: 1.5rem 0;
+    }
+
+    .sippyshop-btn {
+        padding: 0.8rem 1.8rem;
+        font-size: 1.1rem;
+    }
+
+    .sippyshop-history .sippyshop-btn {
+        padding: 0.5rem 1.2rem;
+        font-size: 1rem;
+    }
 
 
+  
 }
