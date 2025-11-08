@@ -172,4 +172,16 @@
         margin-bottom: 1.5rem;
         display: inline-block;
     }
+
+    .review-section h3,
+    .review-list h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .review-list .card-title,
+    .review-list .card-text,
+    .review-list .text-warning {
+        font-size: 1rem;
+    }
 }

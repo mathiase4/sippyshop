@@ -623,6 +623,64 @@ h1, h2, h3, h4, h5, h6 {
     color: #000;
     transform: scale(1.05);
 }
+/* ======= review form and list styling ============= */
+.review-form {
+    max-width: 550px;
+}
+
+.review-form label {
+    color: #faf8f5 !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.review-form .form-control {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+}
+
+.review-form .btn-add-cart {
+    padding: 0.4rem 1.4rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    max-width: 200px;
+}
+
+.review-list {
+    margin-top: 3rem;
+}
+
+.review-list .card {
+    border: 1px solid #3a3530;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    max-width: 520px;
+    padding: 0.1rem 0.2rem;
+}
+
+.review-section p a {
+    color: #faf8f5 !important;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* show rating more */
+.review-list .text-warning {
+    color: #ffc107 !important;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.review-list .card-text {
+    color: #d4c9bb;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    
+}
+
+.review-form textarea.form-control {
+    height: 100px;
+}
+
 
 /*==========================HERE IS ORDER HISTORY STYLING ======================*/
 
@@ -839,6 +897,21 @@ h1, h2, h3, h4, h5, h6 {
     .sippyshop-order-detail .list-group-item {
         padding: 10px 15px;
     }
+
+    .review-section h3,
+    .review-list h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .review-list .card-title,
+    .review-list .card-text,
+    .review-list .text-warning {
+        font-size: 1rem;
+    }
+
+
+
 }
 
 /* ==================TABLETS (ipad) 769-1024px================================ */
