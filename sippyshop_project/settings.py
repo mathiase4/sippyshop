@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 from decouple import config
 import dj_database_url
 
@@ -94,9 +95,10 @@ TEMPLATES = [
 WSGI_APPLICATION = 'sippyshop_project.wsgi.application'
 
 
-# Database
+
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# --- DATABASE ---
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
@@ -104,7 +106,6 @@ DATABASES = {
     }
 }
 
-# if heroku sends database_url use this one instead.
 DATABASE_URL = os.environ.get("DATABASE_URL")
 if DATABASE_URL:
     DATABASES["default"] = dj_database_url.parse(DATABASE_URL, conn_max_age=600)
