@@ -89,6 +89,12 @@
     var stripePublicKey = '{{ stripe_public_key }}';
     var total_Amount = '{{ total }}';
     var clientSecret = '{{ client_secret }}';
+
+    // remove the country flag //
+    const flagImg = document.getElementById('flag_id_country')
+    if (flagImg) {
+        flagImg.remove();
+    }
  </script>
  <!-- stripe checkout js -->
   <script src="{% static 'js/stripe-checkout.js' %}"></script>

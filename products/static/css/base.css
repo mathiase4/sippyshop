@@ -358,7 +358,7 @@ h1, h2, h3, h4, h5, h6 {
 .card {
     background-color: #1a1511;
     border: 1px solid #2a2520;
-    transition: transform 0.2; /* smooth hover effect to make it more alive */
+    transition: transform 0.2s; /* smooth hover effect to make it more alive */
     box-shadow:
      0 12px 24px rgba(0, 0, 0, 0.6),
      0 6px 12px rgba(0, 0, 0, 0.4),
@@ -606,7 +606,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #2a2520;
     padding: 15px 30px;
     margin-bottom: 250px !important;
-    margin: o auto;
+    margin: 0 auto;
     max-width: 700px;
 }
 
@@ -620,7 +620,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: white;
     color: #000;
     text-decoration: none;
-    font-weight: 600px;
+    font-weight: 600;
     font-size: 0.9rem;
     border-radius: 5px;
     transition: all 0.3s;
@@ -715,7 +715,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: white;
     color: #000;
     text-decoration: none;
-    font-weight: 600px;
+    font-weight: 600;
     font-size: 0.9rem;
     border-radius: 5px;
     transition: all 0.3s;

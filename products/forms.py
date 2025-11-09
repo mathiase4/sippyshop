@@ -8,7 +8,7 @@ class OrderForm(forms.ModelForm):
     Form for collecting customer information at checkout.
     """
     country = CountryField(blank_label='(Select country)').formfield(
-        widget=CountrySelectWidget(attrs={'class:': 'form-select'})
+        widget=CountrySelectWidget(attrs={'class': 'form-select'})
     )
     
     class Meta:
