@@ -145,8 +145,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'products' / 'static',
 ]
 
-# Whitenoise
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 # Media files (uploaded images)
 MEDIA_URL = '/media/'
