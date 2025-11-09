@@ -43,9 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cloudinary_storage',
     'django.contrib.sites',
     'cloudinary',
+    'cloudinary_storage',
 
     # Third-party apps
     'crispy_forms',
@@ -166,13 +166,12 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 # GOT HELP FROM YT VIDEO FOR ALLAUTH:https://www.youtube.com/watch?v=7ThneEnc
 # Allauth Configuration
 SITE_ID = 1
-ACCOUNT_EMAIL_VERIFICATION = 'none'
-
-ACCOUNT_LOGIN_METHODS = ['username', 'email']
-ACCOUNT_SIGNUP_FIELDS = ['username*', 'email*', 'password1*', 'password2*']
-
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+ACCOUNT_EMAIL_VERIFICATION = "none"
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = True
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
 
 # CLOUDINARY CONFIGURATION
 CLOUDINARY_STORAGE = {
