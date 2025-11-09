@@ -197,6 +197,16 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1.05);
     border: 1px solid white;
 }
+/* fix logout button so its not blue when u press it */
+.logout-btn:focus,
+.logout-btn:active,
+.logout-page-button:focus,
+.logout-page-button:active {
+    background-color: #000 !important;
+    color: #faf8f5 !important;
+    border: #faf0f5 !important;
+
+}
 
 /* register page button */
 .register-page-button {
