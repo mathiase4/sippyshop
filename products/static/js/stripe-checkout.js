@@ -5,7 +5,7 @@
 
 
 // Stripe Card Element style configuration 
-const stripeCardStyle = {
+var stripeCardStyle = {
     base: {
         color: '#000',
         fontSize: '16px',

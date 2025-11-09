@@ -30,18 +30,19 @@ scrollBtn.onclick = function () {
 };
 
 // Mobile Hamburger Menu //
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('navMenu');
+var hamburger = document.getElementById('hamburger');
+var navMenu = document.getElementById('navMenu');
 
 if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', function () {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
     });
 
     // close menu when clicking on a link //
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
+    var navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
         });
@@ -51,22 +52,22 @@ if (hamburger && navMenu) {
 //============
 // Product detail quantity (+ or -)
 //============
-const qtyInput = document.getElementById('quantity');
-const qtyHidden = document.getElementById('quantity-hidden');
-const qtyIncrease = document.getElementById('increase')
-const qtyDecrease = document.getElementById('decrease');
+var qtyInput = document.getElementById('quantity');
+var qtyHidden = document.getElementById('quantity-hidden');
+var qtyIncrease = document.getElementById('increase');
+var qtyDecrease = document.getElementById('decrease');
 
 // only use if them all exists 
 if (qtyInput && qtyHidden && qtyIncrease && qtyDecrease) {
     qtyIncrease.addEventListener('click', function () {
-        let current = Number(qtyInput.value);
+        var current = Number(qtyInput.value);
         current = current + 1;
         qtyInput.value = current;
         qtyHidden.value = current;
     });
 
     qtyDecrease.addEventListener('click', function () {
-        let current = Number(qtyInput.value);
+        var current = Number(qtyInput.value);
     if (current > 1) {
         current = current - 1;
         qtyInput.value = current;
@@ -75,7 +76,7 @@ if (qtyInput && qtyHidden && qtyIncrease && qtyDecrease) {
     });
 
     qtyInput.addEventListener('input', function () {
-        let current = Number(qtyInput.value);
+        var current = Number(qtyInput.value);
         if (current < 1 || isNaN(current)) {
             current = 1;
         }
