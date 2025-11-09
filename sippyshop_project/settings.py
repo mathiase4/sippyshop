@@ -12,9 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 from decouple import config
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool) # converts true string to boolean
+DEBUG = config('DEBUG', default=False, cast=bool)  # converts true string to boolean
 
 ALLOWED_HOSTS = []
 
@@ -44,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'cloudinary',
-    
+
     # Third-party apps
     'crispy_forms',
     'crispy_bootstrap5',
@@ -52,7 +50,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'django_countries',
-    
+
     # Apps
     'products',
     'accounts',
@@ -153,8 +151,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
-# GOT HELP FROM YT VIDEO FOR ALLAUTH: https://www.youtube.com/watch?v=7ThneEnc
-# Allauth Configuration 
+# GOT HELP FROM YT VIDEO FOR ALLAUTH:https://www.youtube.com/watch?v=7ThneEnc
+# Allauth Configuration
 SITE_ID = 1
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
@@ -179,6 +177,6 @@ STRIPE_PUBLIC_KEY = config('STRIPE_PUBLIC_KEY')
 STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
 STRIPE_CURRENCY = 'usd'
 
-# EMAIL in development 
+# EMAIL in development
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 DEFAULT_FROM_EMAIL = "no-reply@sippyshop.local"

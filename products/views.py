@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseForbidden
-import stripe 
+import stripe
 from .models import Product, Order, OrderItem, Review
 from .forms import OrderForm, ReviewForm
 from allauth.account.views import (
@@ -15,67 +15,61 @@ from allauth.account.views import (
 
 
 def home(request):
-    """
+    """Display homepage with hero section and all products."""
 
-Display homepage with hero section and all products.
-    """
     products = Product.objects.all()
     return render(request, 'products/home.html', {'products': products})
 
 
 def product_list(request):
     """
-    View to show all products,
+    View to show all products
     Shows all mugs available in the shop.
     """
+
     products = Product.objects.all()
     return render(request, 'products/product_list.html', {'products': products})
 
 
 def product_detail(request, product_id):
-    """
-    View to show individual product 
-    details and handles review form submissions.
-    """
+    """View to show individual product and details and handles review form submissions."""
+
     product = get_object_or_404(Product, id=product_id)
-    
+
     reviews = product.reviews.all().order_by('-created_at')
-    
-    # review code 
+
+    # review code
     review_form = ReviewForm()
-    
+
     if request.method == 'POST':
-        
-        
         if not request.user.is_authenticated:
             messages.error(request, 'You must be logged in to leave a review.')
             return redirect('account_login')
-        
+
         review_form = ReviewForm(data=request.POST)
-        
+
         if review_form.is_valid():
-            
+
             try:
                 Review.objects.get(user=request.user, product=product)
                 messages.error(request, 'You have already reviewed this product.')
-                
+
             except Review.DoesNotExist:
-                
+
                 review = review_form.save(commit=False)
-                
+
                 # add user and product
                 review.user = request.user
                 review.product = product
-                
-                review.save() # save 
+
+                review.save()  # save
                 messages.success(request, 'Your review has been submitted!')
-                
+
             return redirect('product_detail', product_id=product.id)
-        
+
         else:
             messages.error(request, 'Please correct the errors in the form.')
-            
-    
+
     context = {
         'product': product,
         'reviews': reviews,
@@ -91,10 +85,10 @@ def edit_review(request, review_id):
     Only the use who created the review can edit it.
     """
     review = get_object_or_404(Review, id=review_id)
-    
+
     if review.user != request.user:
         return HttpResponseForbidden("You cannot edit this review.")
-    
+
     if request.method == 'POST':
         form = ReviewForm(request.POST, instance=review)
         if form.is_valid():
@@ -103,13 +97,14 @@ def edit_review(request, review_id):
             return redirect('product_detail', product_id=review.product.id)
     else:
         form = ReviewForm(instance=review)
-        
-    return render(request, 'products/edit_review.html', {
-        'form': form,
-        'review': review,
-    })
-    
-    
+
+    return render(
+        request,
+        'products/edit_review.html',
+        {'form': form, 'review': review},
+    )
+
+
 @login_required
 def delete_review(request, review_id):
     """
@@ -117,31 +112,27 @@ def delete_review(request, review_id):
     only the owner can delete it.
     """
     review = get_object_or_404(Review, id=review_id)
-    
+
     if review.user != request.user:
         return HttpResponseForbidden("You cannot delete this review.")
-    
+
     if request.method == 'POST':
         product_id = review.product.id
         review.delete()
         messages.success(request, "Review deleted.")
         return redirect('product_detail', product_id=product_id)
-    
+
     return redirect('product_detail', product_id=review.product.id)
-        
-       
 
 
 def add_to_cart(request, product_id):
-    """
-    Add product to shopping cart.
-    """
+    """Add product to shopping cart."""
     product = Product.objects.get(id=product_id)
     cart = request.session.get('cart', {})
-    
+
     # Get quantity from form (default 1)
     quantity = int(request.POST.get('quantity', 1))
-    
+
     # if product already in cart, increase quantity
     if str(product_id) in cart:
         cart[str(product_id)]['quantity'] += quantity
@@ -150,104 +141,105 @@ def add_to_cart(request, product_id):
             'name': product.name,
             'price': str(product.price),
             'quantity': quantity,
-            'image': product.image.url if product.image else None
+            'image': product.image.url if product.image else None,
         }
-        
+
     # save cart to session
     request.session['cart'] = cart
     request.session.modified = True
-    
+
     # show message
     messages.success(request, f'{product.name} added to cart!')
-    
-    #Redirect back to product detail
+
+    # Redirect back to product detail
     return redirect('product_detail', product_id=product_id)
 
+
 def view_cart(request):
-    """
-    display shopping cart.
-    """
+    """display shopping cart."""
+
     cart = request.session.get('cart', {})
-    
+
     # calculate total
     total = 0
     for item in cart.values():
         total += float(item['price']) * item['quantity']
-        
+
     context = {
         'cart': cart,
-        'total': total
+        'total': total,
     }
     return render(request, 'products/cart.html', context)
 
+
 def update_cart(request, product_id):
-    """
-    Update product quantity in cart.
-    """
+    """Update product quantity in cart."""
+
     cart = request.session.get('cart', {})
     quantity = int(request.POST.get('quantity', 1))
-    
+
     if str(product_id) in cart:
         if quantity > 0:
             cart[str(product_id)]['quantity'] = quantity
         else:
             del cart[str(product_id)]
-            
+
     request.session['cart'] = cart
     request.session.modified = True
-    
+
     return redirect('view_cart')
+
 
 def remove_from_cart(request, product_id):
     """
     Remove product from cart.
-   if cart is empty after removal , go to cart
-   else go back to the page we came from (cart or checkout)
+    If cart is empty after removal, go to cart.
+    Otherwise go back to where we came from.
     """
+
     cart = request.session.get('cart', {})
     product_id = str(product_id)
-    
+
     if product_id in cart:
         product = Product.objects.get(id=product_id)
         del cart[product_id]
         messages.success(request, f'{product.name} removed!')
-        
-    
+
     request.session['cart'] = cart
     request.session.modified = True
-    
+
     # if cart goes empty
     if not cart:
         return redirect('view_cart')
-    
+
     referer = request.META.get('HTTP_REFERER', '')
-    
+
     if 'cart' in referer:
         return redirect('view_cart')
-    
+
     # come from checkout
     if 'checkout' in referer:
         return redirect('checkout')
-    
-   # fallback
+
+    # fallback
     return redirect('view_cart')
-    
-    
+
+
 def checkout(request):
     """
     Display checkout page with Stripe Payment.
     """
     cart = request.session.get('cart', {})
-    
+
     # Redirect if cart is empty
     if not cart:
         messages.warning(request, 'Your cart is empty!')
         return redirect('product_list')
     # Calculate cart items and total
-    
+
     cart_items = []
     total = 0
-    
+
     for product_id, item_data in cart.items():
         try:
             product = Product.objects.get(id=product_id)
@@ -272,22 +264,21 @@ def checkout(request):
     except stripe.error.StripeError as e:
         messages.error(request, f'Error creating payment intent: {str(e)}')
         return redirect('view_cart')
-        
+
     if request.method == 'POST':
         form = OrderForm(request.POST)
-        
+
         if form.is_valid():
-            #create order
+            # create order
             order = form.save(commit=False)
-            
+
             order.stripe_payment_intent = request.POST.get('payment_intent')
-            
-            order.user = request.user if request.user.is_authenticated else None 
+
+            order.user = request.user if request.user.is_authenticated else None
             order.total_amount = total
             order.save()
 
-                
-            # Save order items 
+            # Save order items
             for item in cart_items:
                 OrderItem.objects.create(
                     order=order,
@@ -295,21 +286,19 @@ def checkout(request):
                     quantity=item['quantity'],
                     price=item['product'].price
                 )
-                    
+
             # clear cart
             request.session['cart'] = {}
-                    
+
             messages.success(request, ' Order placed successfully!')
             return redirect('payment_success', order_id=order.id)
-        
+
         else:
             messages.error(request, 'Please check your shipping information.')
-            
-                
+
     else:
         form = OrderForm()
-            
-            
+
     context = {
             'cart_items': cart_items,
             'total': total,
@@ -317,13 +306,13 @@ def checkout(request):
             'stripe_public_key': settings.STRIPE_PUBLIC_KEY,
             'client_secret': intent.client_secret,
         }
-        
+
     return render(request, 'products/checkout.html', context)
 
+
 def payment_success(request, order_id):
-    """
-    Display payment success page
-    """
+    """Display payment success page."""
+
     try:
         order = Order.objects.get(id=order_id)
         context = {'order': order}
@@ -331,8 +320,8 @@ def payment_success(request, order_id):
     except Order.DoesNotExist:
         messages.error(request, 'Order not found')
         return redirect('product_list')
-    
-    
+
+
 def payment_cancel(request):
     """
     Display payment cancelled page
@@ -340,32 +329,32 @@ def payment_cancel(request):
     messages.warning(request, 'Payment was cancelled')
     return redirect('view_cart')
 
-        # ================ DJANGO PASSWORD RESET =================
+# ================ DJANGO PASSWORD RESET =================
+
 
 class MyPasswordResetView(PasswordResetView):
     template_name = 'account/password_reset.html'
-        
-    
+
+
 class MyPasswordResetDoneView(PasswordResetDoneView):
     template_name = 'account/password_reset_done.html'
-    
+
     def dispatch(self, request, *args, **kwargs):
         messages.info(request, "check your email for the reset link.")
         return super().dispatch(request, *args, **kwargs)
-    
-    
+
+
 class MyPasswordResetFromKeyView(PasswordResetFromKeyView):
     template_name = 'account/password_reset_form_key.html'
-    
+
     def form_valid(self, form):
         messages.success(self.request, "Your password has ben changed.")
         return super().form_valid(form)
-    
-    
+
+
 class MyPasswordResetFromKeyDoneView(PasswordResetFromKeyDoneView):
     template_name = 'account/password_reset_from_key_done.html'
-    
+
     def dispatch(self, request, *args, **kwargs):
         messages.success(request, "Password reset is complete.")
         return super().dispatch(request, *args, **kwargs)
-        
