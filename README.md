@@ -114,4 +114,10 @@
 - `products/static/css - checkout.css - **PASS**
 - `products/static/css - payment_success.html - **PASS**
 - `products/static/css - product_detail.html - **PASS**
+
+
+### JavaScript JShint
+
+- `products/statid/js - main.js (jshint didn't like const or let so i needed to change it to var to go through) - **PASS**
+- `products/static/js - stripe-checkout.js ( want var so changed const to var, and everything was pass except import in comment that i use stripe) - **PASS**
   
