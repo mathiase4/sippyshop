@@ -19,7 +19,10 @@ class ModelTests(TestCase):
         
     def test_create_order(self):
         # test create and check an order
+        user = User.objects.create(username="testuser_order")
+        
         order = Order.objects.create(
+            user=user,
             full_name="Test User",
             email="test@example.com",
             total_amount=99.99,
