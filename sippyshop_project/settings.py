@@ -29,6 +29,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)  # converts true string to boo
 
 ALLOWED_HOSTS = [
     "sippyshop-project-249d59235c6d.herokuapp.com/",
+    ".herokuapp.com",
     "localhost",
     "127.0.0.1",
 ]
