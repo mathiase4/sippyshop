@@ -128,3 +128,11 @@
 - exclude = venv, .venv, env, migrations, __pycache__, manage.py.
 - Run flake8 . in the terminal and everyting is clean.
   
+  ### What was fixed with flake8
+  
+- removing trailing whitespace
+- fixing extra/too many blank lines
+- adding the required 2 blank lines before top-level defs/classes
+- splitting overly long lines
+- removing unused imports
+  
