@@ -146,6 +146,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 #  ]
 
 STATICFILES_STORAGE = 'whitenoise.storage.ManifestStaticFilesStorage'
+WHITENOISE_MANIFEST_STRICT = False
 
 
 # Media files (uploaded images)
