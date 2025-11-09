@@ -95,7 +95,7 @@
 
 ### HTML W3C Markup
 
-- `accounts/templates/accounts - order_details.html (Removed unused <ul> and <li> , added " to "My orders"> - **PASS**
+- `accounts/templates/accounts - order_details.html (Removed unused <ul> and <li> ,added " to "My orders"> - **PASS**
 - `accounts/templates/accounts - order_history.html - **PASS**
 
 - `products/templates/products - cart.html - **PASS**
