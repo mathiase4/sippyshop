@@ -2,13 +2,13 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="container mt-5">
-    <h2 class="text-light">Edit review</h2>
+<div class="edit-review-container">
+    <h2>Edit review</h2>
     <form method="post">
         {% csrf_token %}
         {{ form|crispy }}
-        <button type="submit" class="btn btn-primary mt-2">Save</button>
-        <a href="{% url 'product_detail' review.product.id %}" class="btn btn-secondary mt-2">Cancel</a>
+        <button type="submit" class="btn btn-edit-save mt-2">Save</button>
+        <a href="{% url 'product_detail' review.product.id %}" class="btn btn-edit-cancel mt-2">Cancel</a>
     </form>
 </div>
 {% endblock %}

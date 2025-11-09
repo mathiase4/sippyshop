@@ -249,9 +249,6 @@ h1, h2, h3, h4, h5, h6 {
 .auth-box a {
     color: #faf8f5;
 }
-.auth-box a:hover {
-    
-}
 
 /* login page styling */
 .login-page-text,
@@ -728,7 +725,59 @@ h1, h2, h3, h4, h5, h6 {
     color: #000;
     transform: scale(1.05);
 }
+
+/* edit review page */
+.edit-review-container {
+    max-width: 520px;
+    margin: 4rem auto;
+    background: #2a2520;
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 1.5rem 1.8rem;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.edit-review-container h2 {
+    color: #faf0f5;
+    margin-bottom: 1rem;
+}
+
+.edit-review-container form .btn {
+    margin-right: .5rem;
+}
+
+/* styling buttons in reviews edit */
+
+.btn-edit-save {
+    background-color: #000;
+    color: #faf8f5;
+    border: 1px solid #faf8f5;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-edit-save:hover {
+    background-color: #faf8f5;
+    transform: scale(1.1);
+}
   
+
+.btn-edit-cancel {
+    background-color: #000;
+    color: #faf8f5;
+    border: 1px solid #faf8f5;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-edit-cancel:hover {
+    background-color: #faf8f5;
+    transform: scale(1.1);
+}
 /*==================== MOBILE 768px ============================*/
 @media (max-width: 768px) {
 
@@ -1040,6 +1089,43 @@ h1, h2, h3, h4, h5, h6 {
         padding: 0.5rem 1.2rem;
         font-size: 1rem;
     }
+
+    /* EDIT REVIEW PAGE STYLING */
+
+    .edit-review-container {
+
+        max-width: 650px;
+        padding: 2.2rem 2.4rem;
+    }
+
+    .edit-review-container h2 {
+        font-size: 2.1rem;
+        
+    }
+    /* make form fields bigger */
+    
+    .edit-review-container .form-control,
+    .edit-review-container textarea {
+        font-size: 1.05rem;
+        padding: 0.7rem 0.9rem;
+    }
+
+    /* make buttons bigger on ipad */
+
+    .btn-edit-save,
+    .btn-edit-cancel {
+
+        font-size: 1rem;
+        padding: 0.55rem 1.4rem;
+    }
+
+    /* review cards buttons on product detail */
+
+    .review-list .btn {
+        font-size: 0.9rem;
+        padding: 0.45rem 1.1rem;
+    }
+
 
 
   
