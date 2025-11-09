@@ -145,7 +145,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
   #  BASE_DIR / 'products' / 'static',
 #  ]
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = 'whitenoise.storage.ManifestStaticFilesStorage'
 
 
 # Media files (uploaded images)
