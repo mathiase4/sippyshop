@@ -120,4 +120,11 @@
 
 - `products/statid/js - main.js (jshint didn't like const or let so i needed to change it to var to go through) - **PASS**
 - `products/static/js - stripe-checkout.js ( want var so changed const to var, and everything was pass except import in comment that i use stripe) - **PASS**
+
+### Flake8 - Python 
+
+- To ensure the Python code follows PEP 8, the project was linted using flake8.
+- .flake8 file was added in the project root:
+- exclude = venv, .venv, env, migrations, __pycache__, manage.py.
+- Run flake8 . in the terminal and everyting is clean.
   
