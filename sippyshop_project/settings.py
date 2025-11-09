@@ -157,8 +157,8 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 # Allauth Configuration 
 SITE_ID = 1
 ACCOUNT_EMAIL_VERIFICATION = 'none'
-ACCOUNT_AUTHENTICATION_METHOD = 'username'
-ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_LOGIN_METHOD = 'username'
+ACCOUNT_SIGNUP_FIELDS = ['username', 'email', 'password']
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
