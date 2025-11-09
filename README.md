@@ -17,7 +17,7 @@
 - [Accessibility](#accessibility)
 - [Design Choices](#design-choices)
 - [Automated Tests](#Automated-tests)
-- [Manual Tests & Validation](#manual-tests&validation)
+- [Validation](#validation)
 - [Deployment](#deployment)
 - [Wireframes](#wireframes)
 
@@ -91,12 +91,19 @@
 
 3 - **Results** : Ran 5 tests in 0.067s (OK)
 
-### Should Have
+# Validation
 
-- **Logout** - As a customer I want to logout from my account
+### HTML W3C Markup
 
+- `accounts/templates/accounts - order_details.html (Removed unused <ul> and <li> , added " to "My orders"> - **PASS**
+- `accounts/templates/accounts - order_history.html - **PASS**
 
-### Could Have
+- `products/templates/products - cart.html - **PASS**
+- `products/templates/products - checkout.html - ( 1 Error from django-countries needs alt="") except from that **PASS**
+- `products/templates/products - home.html - **PASS**
+- `products/templates/products - product_detail.html - **PASS**
+- `products/templates/products - product_list.html - **PASS**
+- `products/templates/products - edit_review.html - **PASS**
+- `products/templates/products - payment_success.html - **PASS** 
 
-- **Sort by Price** - As a customer I want to sort products by price
   
