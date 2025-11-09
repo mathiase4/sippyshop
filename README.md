@@ -9,7 +9,7 @@
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [User Stories](#user-stories)
+- [User Stories And Manuel Testing](#user-stories-and-manual-testing)
 - [Agile Planning](#agile-planning)
 - [Features](#features)
 - [Future Features](#future-features)
@@ -25,38 +25,50 @@
 # User Stories And Manual Testing
 
 ### Must Have
+
 - **View All Mugs** - Story: As a customer I want to see all mugs so I can choose what i want to buy
 - Test: Go to /products/ and check all products are listed - **PASS**
   
+  
 - **Register Account** - **Story:** As a customer I want to register account so I can shop
 - **Test:** Go to /accounts/signup/ (allauth) and create a new user - **PASS**
+  
 
-- **Login** - **Story:** As a customer I want to login so I can see my orders
+- **Login to see my orders** - **Story:** As a customer I want to login so I can see my orders
 - **Test:** Go to /accounts/login/ and login with the user created above - **PASS**
+  
 
-- **Pay With Card** - **Story:** As a customer I want to pay with cars so I can buy products
+- **Pay With Card** - **Story:** As a customer I want to pay with card so I can buy products
 - **Test:** Add product to card and go to /checkout/ then submit stripe test payment - **PASS**
+  
   
 - **Payment Confirmation** - **Story:** As a customer I want to see confirmation after payment
 - **Test:** After checkout the app redirects to payment_success - **PASS**
   
-- **Add Product (Admin)** - **Story:** As a admin I want to add new products in admin panel
+  
+- **Add Product (Admin)** - **Story:** As an admin I want to add new products in admin panel
 - **Test:** Login to /admin/ then products, add product - **PASS**
   
-- **Edit Product (Admin)** - **Story:** As a admin I want to edit products when price change
+  
+- **Edit Product (Admin)** - **Story:** As an admin I want to edit products when price change
 - **Test:** In /admin/ edit and existing product - **PASS**
   
-- **Delete Products** - **Story:** As a admin I want to delete products when they are not available
+  
+- **Delete Products (Admin)** - **Story:** As an admin I want to delete products when they are not available
 - **Test:** In /admin/ delete a product - **PASS**
+  
 
 - **Review Product** - **Story:** As a logged in customer I want to leave a review so I can tell others what I think
 - **Test:** Go to product detail and submit review - **PASS**
+  
 
 - **Edit Review** - **Story:** As the review owner I want to edit my review so I can fix mistakes
 - **Test:** Click "Edit" on own review - **PASS**
+  
 
 - **Delete Review** - **Story:** As the review owner I want to delete my review if I don't want it anymore
 - **Test:** Click "Delete" on own review - **PASS**
+  
 
 # Automated Tests
 
