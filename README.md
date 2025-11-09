@@ -105,5 +105,13 @@
 - `products/templates/products - product_list.html - **PASS**
 - `products/templates/products - edit_review.html - **PASS**
 - `products/templates/products - payment_success.html - **PASS** 
+- `products/templates - base.html **PASS**
 
+### CSS W3C Jigsaw
+
+- `products/static/css - base.css - **PASS**
+- `products/static/css - cart.css - **PASS**
+- `products/static/css - checkout.css - **PASS**
+- `products/static/css - payment_success.html - **PASS**
+- `products/static/css - product_detail.html - **PASS**
   
