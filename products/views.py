@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseForbidden
 import stripe 
 from .models import Product, Order, OrderItem, Review
 from .forms import OrderForm, ReviewForm
@@ -80,9 +82,54 @@ def product_detail(request, product_id):
         'review_form': review_form,
     }
     return render(request, 'products/product_detail.html', context)
+
+
+@login_required
+def edit_review(request, review_id):
+    """
+    let the user edit their own review.
+    Only the use who created the review can edit it.
+    """
+    review = get_object_or_404(Review, id=review_id)
+    
+    if review.user != request.user:
+        return HttpResponseForbidden("You cannot edit this review.")
+    
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Review updated.")
+            return redirect('product_detail', product_id=review.product.id)
+    else:
+        form = ReviewForm(instance=review)
+        
+    return render(request, 'products/edit_review.html', {
+        'form': form,
+        'review': review,
+    })
+    
+    
+@login_required
+def delete_review(request, review_id):
+    """
+    Let the user delete their own review.
+    only the owner can delete it.
+    """
+    review = get_object_or_404(Review, id=review_id)
+    
+    if review.user != request.user:
+        return HttpResponseForbidden("You cannot delete this review.")
+    
+    if request.method == 'POST':
+        product_id = review.product.id
+        review.delete()
+        messages.success(request, "Review deleted.")
+        return redirect('product_detail', product_id=product_id)
+    
+    return redirect('product_detail', product_id=review.product.id)
         
        
-    
 
 
 def add_to_cart(request, product_id):

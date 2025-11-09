@@ -19,5 +19,9 @@ urlpatterns = [
     path('checkout/', views.checkout, name='checkout'),
     path('payment/success/<int:order_id>/', views.payment_success, name='payment_success'),
     path('payment/cancel/', views.payment_cancel, name='payment_cancel'),
+    
+    # review edit and delete
+    path('reviews/<int:review_id>/edit/', views.edit_review, name='edit_review'),
+    path('reviews/<int:review_id>/delete/', views.delete_review, name='delete_review'),
 
 ]
