@@ -16,13 +16,17 @@
 - [Features](#features)
 - [Future Features](#future-features)
 - [Security](#security)
+- [JavaScript](#javascript)
+- [Requirements](#requirements)
+- [Attribution](#attribution)
+- [Version Control](#version-control)
 - [Design Choices](#design-choices)
-- [Automated Tests](#Automated-tests)
+- [Automated Tests](#automated-tests)
 - [Validation](#validation)
-- [ValidationscreenshotsHTML](#Validationscreenshotshtml)
-- [ValidationscreenshotsCSS](#Validationscreenshotscss)
-- [ValidationscreenshotsJS](#Validationscreenshotsjs)
-- [ValidationscreenshotsFLAKE8](#Validationscreenshotsflake8)
+- [ValidationscreenshotsHTML](#validationscreenshotshtml)
+- [ValidationscreenshotsCSS](#validationscreenshotscss)
+- [ValidationscreenshotsJS](#validationscreenshotsjs)
+- [ValidationscreenshotsFLAKE8](#validationscreenshotsflake8)
 - [Performance and Accessibility](#performance-and-accessibility)
 - [Deployment](#deployment)
 - [Wireframes](#wireframes)
@@ -187,8 +191,8 @@ Custom JavaScript is used for better user experience.
 ## Future Features
 
 - Add product categories (Sort by Price) are in githubs project sippyshop Todo/In Progress, Done.
-- Add user profile page with address book
-- Add email notifications
+- Add user profile page with address book.
+- Add email automatic order notifications.
 
 
 ## JavaScript
