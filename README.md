@@ -8,8 +8,11 @@
 ## Table of Contents
 - [Introduction](#introduction)
 - [Project Purpose and Goals](#project-purpose-and-goals)
-- [User Stories And Manuel Testing](#user-stories-and-manual-testing)
-- [Agile Planning](#agile-planning)
+- [Technologies Used](#technologiesused)
+- [Django Apps](#django-apps)
+- [Database and Models](#database-and-models)
+- [User Authentication](#user-authentication)
+- [User Stories And Manual Testing](#user-stories-and-manual-testing)
 - [Features](#features)
 - [Future Features](#future-features)
 - [Security](#security)
@@ -33,12 +36,12 @@
 SippyShop is a full-stack e-commerce web application built with Django. The idea is to have a small online store that sells mugs
 where users can browse products, log in, add items to a cart, and place an order very easily. The project focuses on core webshop features rather
 than a huge catalogue.
-The app also supports user accounts so people can see their past orders and leave reviews on products they've bought, which makes the site a bit more interactive.
+The app also supports user accounts so people can see their past orders and leave reviews on products they've bought.
 
 ## Project Purpose and Goals
 
 My main goal was to build a complete e-commerce site with Django that is so simple to use that
-even a 6 year old can go in and look around on the website.
+even a 6 year old can look around on the website.
 
 To plan the site, i broke it down into what a User (the customer) wants to do, and what (the site
 owner) need to be able to do.
@@ -57,6 +60,46 @@ owner) need to be able to do.
 - Keep users engaged through accounts and reviews
 
 
+## Technologies Used
+
+- HTML
+- CSS
+- JAVASCRIPT
+- PYTHON & DJANGO
+- POSTGRESQL
+- STRIPE (TEST MODE ONLY)
+- CLOUDINARY
+- BOOTSTRAP (FOR LAYOUT AND DESIGN)
+- DJANGO-ALLAUTH (FOR AUTHENTICATION)
+- DJANGO-CRISPY-FORMS (FOR BETTER FORMS)
+
+
+## Django Apps
+
+This project has two main Django apps:
+- **products:** Mug details,name,description,price,image,user registration, login, profiles.
+- **accounts:** Order details,history detail,login_required.
+
+
+## Database and Models
+SippyShop uses a relational database (PostgreSQL)
+**Custom Django models:**
+- Product: Mug details (name, description,price, image)
+- Order: Customer orders, linked to user, with delivery info and status
+- OrderItem: Each product in an order, with quantity and price
+- Review: Product reviews, linked to both product and user
+
+### Relationships:
+- Each Order belongs to a User
+- Each Order has many OrderItems
+- Each OrderItem is linked to a Product
+- Each Review belongs to a Product and a User
+
+
+## User Authentication
+- Users can register, login, and log out, using Django Allauth.
+- Users must register to save their orders and write reviews.
+- Only logged-in users can see their order history and write/edit/delete their own reviews.
 
 
 # User Stories And Manual Testing
@@ -192,7 +235,7 @@ owner) need to be able to do.
 - exclude = venv, .venv, env, migrations, __pycache__, manage.py.
 - Run flake8 . in the terminal and everyting is clean.
   
-  ### What was fixed with flake8
+### What was fixed with flake8
   
 - removing trailing whitespace
 - fixing extra/too many blank lines
@@ -251,5 +294,53 @@ owner) need to be able to do.
 
 ### Mobile Performance with Lighthouse
 ![Lighthousemobile](screenshots/lighthousemobile.png)
+
+
+## Deployment 
+
+This project uses a PostgreSQL database on Heroku and Cloudinary for all media file (image)
+storage.
+
+### Deployment Steps
+
+1. Push all code to Github.
+2. Create a new app on Heroku.
+3. Link the Github repository to the Heroku app for deployment.
+4. Set all environment variables (Config Vars) in the Heroku app settings:
+   - SECRET_KEY
+   - DEBUG (set to False)
+   - DATABASE_URL
+   - CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET
+   - STRIPE_PUBLIC_KEY, STRIPE_SECRET_KEY
+     
+5. Deploy the main branch from Github to Heroku
+6. Run migrations to build the database: heroku run python3 manage.py migrate
+7. Run collectstatic: heroku run python3 manage.py collectstatic
+
+### Deployment Troubleshooting (Problems I Solved)
+I ran into a few problems during deployment:
+- **Problem 1: Product Images Disappeared**
+- **Issue:** After deploying, all the product images were gone. The local database and
+images did not transfer to Heroku.
+- **Solution:** I had to first upload all my product pictures to Cloudinary.Then, I had to create a new
+  admin account on the live site by running heroku run python3 manage.py createsuperuser.Finally, I had to log in
+  to the Heroku admin panel and re-create all the products one by one, linkin them to the Cloudinary image URLs.
+
+### Problem 2: Favicon Not Loading
+- **Issue:** The small icon in the browser tab ( the favicon ) was not showing up.
+- **Solution:** This was as simple spelling error. I had linked to favicon.png in my HTML, but the file
+ was actually named Favicon.png(with a capital'F'). When i fixed the name in the HTML template, it loaded correctly.
+
+
+
+
+
+
+
+
+
+
+
+
 
   
