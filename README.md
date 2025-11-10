@@ -300,7 +300,7 @@ Main packages used:
 - flake8
 
 **Install with:**
-`pip instll -r requirements.txt`
+`pip install -r requirements.txt`
 
 
 ## ValidationscreenshotsHTML
