@@ -1,6 +1,6 @@
 # SippyShop - Mug E-Commerce Store
 
-- ![SippyShop mockup](screenshots/mockup)
+- ![SippyShop mockup](screenshots/mockup.png)
 
 ## Live Project Link
 - [Live Site on Heroku](https://sippyshop-project-249d59235c6d.herokuapp.com/)
@@ -18,6 +18,31 @@
 - [Validation](#validation)
 - [Deployment](#deployment)
 - [Wireframes](#wireframes)
+
+
+
+
+## Introduction
+
+SippyShop is a full-stack e-commerce web application built with django. The idea is to have a sall online store that sells mugs
+where users can browse products, log in, add items to a cart, and place an order very easy. The project focuses on core webshop features rather
+than a huge catalogue.
+The app also supports user accounts so people can see their past orders and leave reviews on products they've bought, which makes the site a bit more interactive.
+
+**User Goals**
+- View a list of mugs and see product details
+- Add products to the shopping cart
+- Create an account and log in
+- See order history
+- Leave reviews on products
+
+**Site Owner Goals**
+- Sell products online
+- Handle secure payments with (Stripe)
+- Manage products from the Django admin
+- Keep users engaged through accounts and reviews
+
+
 
 
 # User Stories And Manual Testing
