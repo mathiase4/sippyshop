@@ -21,7 +21,7 @@
 - [ValidationscreenshotsCSS](#Validationscreenshotscss)
 - [ValidationscreenshotsJS](#Validationscreenshotsjs)
 - [ValidationscreenshotsFLAKE8](#Validationscreenshotsflake8)
-- [Performance and Accessibility](#performanceandaccessibility)
+- [Performance and Accessibility](#performance-and-accessibility)
 - [Deployment](#deployment)
 - [Wireframes](#wireframes)
 
