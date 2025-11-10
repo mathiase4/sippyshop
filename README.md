@@ -89,6 +89,9 @@ SippyShop uses a relational database (PostgreSQL)
 - OrderItem: Each product in an order, with quantity and price
 - Review: Product reviews, linked to both product and user
 
+The data schema is designed so that each order is linked to a user, each order
+can have multiple items, and each review is linked to both a product and a user.
+
 ### Relationships:
 - Each Order belongs to a User
 - Each Order has many OrderItems
@@ -151,7 +154,12 @@ SippyShop uses a relational database (PostgreSQL)
 
 # Features
 
+Stripe is used for secure payments (test mode only),
+All CRUD operations (Create, Read, Update, Delete) are supported for products and reviews.
+Custom JavaScript is used for better user experience.
+
 ### Start Page
+- The site has main navigation menu at the top of every page for easy access to all sections.
 ![herosection](screenshots/herosection.png)
 
 ### Product List
@@ -179,14 +187,24 @@ SippyShop uses a relational database (PostgreSQL)
 
 ## Future Features
 
-- Add product categories (Sort by Price)
+- Add product categories (Sort by Price) are in githubs project sippyshop Todo/In Progress, Done.
 - Add user profile page with address book
 - Add email notifications
+
+
+## JavaScript
+Custom JavaScript is used for:
+- Showing and hiding toast messages (notifications)
+- Scroll-to-top buttom
+- Mobile hamburger menu
+- Product quantity (+/-) buttons
+- Stripe payment form (handles card input, validation, and payment(testmode)
 
 ## Wireframes
 
 
 # Automated Tests
+Both manual and automated tests have been done to make sure all main features work.
 
 ## I made 5 automated tests to check that my models and views worked.
 ### Model Tests
@@ -321,6 +339,9 @@ Main packages used:
 
 ## Performance and Accessibility
 
+The site has been tested with Lighthouse
+for accessibility.
+
 ### Desktop Performance with Lighthouse
 ![Lighthousedesktop](screenshots/lighthousedesktop.png)
 
@@ -332,6 +353,7 @@ Main packages used:
 
 This project uses a PostgreSQL database on Heroku and Cloudinary for all media file (image)
 storage.
+(Django DEBUG is set to False in production, and all secret keys are kept out of the codebase.)
 
 ### Deployment Steps
 
@@ -367,13 +389,49 @@ images did not transfer to Heroku.
  was actually named Favicon.png(with a capital'F'). When i fixed the name in the HTML template, it loaded correctly.
 
 
+## Version Control
+
+This project uses Git and Github for version control.
+All code changes are tracked with regular commits.
+
+
 ## Security
 
-- All secret keys and passwords are stored in environment variables, not in the code
-- .env file is in .gitignore and not uploaded to Github
-- Django DEBUG is set to False in production
-- Only allowed hosts can access the site
+- All secret keys ( sensitive information) and passwords are stored in environment variables,
+  and are never commited to GitGub.
+- .env file is in .gitignore and not uploaded to Github.
+- Django DEBUG is set to False in production, and all secret keys are kept
+  out of the codebase.
+- Only allowed hosts can access the site.
 
+
+## Attrribution
+**Attribution**
+- All code is written by me unless otherwise stated.
+  Any code from tutorials or other sources is marked with a comment and source link in the code and/or
+  listed here in the README.
+
+  - Used QuickRef.ME website for easy and quick cheatsheet in CSS and HTML/PYTHON
+  - Used cssreference.io for help with box-shadow help with design the webiste
+  - Used devdocs.io for more knowledge
+  - Used w3schoools.com for most part CSS and Bootstrap, Django
+  - Used Chatgpt for Guidance and explain stuff clearer so i understand fully in swedish
+  - Used w3schools.com/howto/howto_js_scroll_to_top.asp
+  - Used codewithharry.com for more guidance with Django coding and installing
+  - Used Code institute cheatsheet django and videos, texts on the website
+  - Used Stripe payment integration on the offical Stripe Django documentation, Code institute videos
+  - Used Cloudinary setup followed with offical Cloudinary Django guide.
+  - Used Django allauth setup followed this Youtube tutorial used settings.py help:[https://www.youtube.com/watch?v=qqFCt0Yde40]
+  - Used PostgreSQL code from Code Institute my 3 key used
+  - Used this Youtube tutorial video for more django knowledge while coding along:[https://www.youtube.com/watch?v=0gAFW4UxsZg&list=PL4cUxeGkcC9iqfAag3a_BKEX1N43uJutw]
+  - Used this Youtube tutorial video for a remainder and knowledge to create the scrollUpButton with js:[https://www.youtube.com/watch?v=nw7I1vfOzzw]
+ 
+
+
+
+
+## README
+This README is written in markdown and uses a clear, consistent structure.
 
 
 
