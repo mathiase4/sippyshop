@@ -19,6 +19,7 @@
 - [JavaScript](#javascript)
 - [Requirements](#requirements)
 - [Attribution](#attribution)
+- [Accessibility](#accessibility)
 - [Version Control](#version-control)
 - [Design Choices](#design-choices)
 - [Automated Tests](#automated-tests)
@@ -102,8 +103,8 @@ can have multiple items, and each review is linked to both a product and a user.
 
 **Validation examples**
 - rating must be 1-5
-- quantity > 1
-- price > 0
+- quantity ≥ 1
+- price ≥ 0
 
 
 #### ER
