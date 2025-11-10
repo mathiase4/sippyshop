@@ -30,7 +30,6 @@
 - [Performance and Accessibility](#performance-and-accessibility)
 - [Deployment](#deployment)
 - [Wireframes](#wireframes)
-- [README](#readme)
 
 
 ## Introduction
@@ -477,15 +476,6 @@ even some "Fix validators", or "added images to the library" "deployment setup" 
   - Used this Youtube tutorial video for more django knowledge while coding along:[https://www.youtube.com/watch?v=0gAFW4UxsZg&list=PL4cUxeGkcC9iqfAag3a_BKEX1N43uJutw]
   - Used this Youtube tutorial video for a remainder and knowledge to create the scrollUpButton with js:[https://www.youtube.com/watch?v=nw7I1vfOzzw]
  
-
-
-## README
-This README is written in markdown and uses a clear, consistent structure.
-
-
-
-
-
 
 
 
