@@ -94,8 +94,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'sippyshop_project.wsgi.application'
 
-
-
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 # --- DATABASE ---
@@ -148,13 +146,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-#  STATICFILES_DIRS = [
-  #  BASE_DIR / 'products' / 'static',
-#  ]
 
 STATICFILES_STORAGE = 'whitenoise.storage.ManifestStaticFilesStorage'
-
-
 
 # Media files (uploaded images)
 MEDIA_URL = '/media/'
