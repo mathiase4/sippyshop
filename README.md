@@ -100,6 +100,19 @@ can have multiple items, and each review is linked to both a product and a user.
 - Each OrderItem is linked to a Product
 - Each Review belongs to a Product and a User
 
+**Validation examples**
+- rating must be 1-5
+- quantity > 1
+- price > 0
+
+
+#### ER
+**Main fields:**
+- **Products:** name, description, price, image, created_at
+- **Order:** user, total, stripe_payment_intent, status, created_at
+- **OrderItem:** order, product, quantity, price_at_time
+- **Review:** product, user, rating 1-5, comment, created_at, updated_at
+
 
 ## User Authentication
 - Users can register, login, and log out, using Django Allauth.
@@ -378,6 +391,12 @@ Both fonts are from Google Fonts
 
 The site has been tested with Lighthouse
 for accessibility.
+
+### Accessibility 
+- Semantic HTML header/nav/main and footer, with clear heading order.
+- Form have labels/aria where needed.
+- Color contrast meets WCAG text and buttons.
+- Alt text on product images (django-contries flag needs alt="")
 
 ### Desktop Performance with Lighthouse
 ![Lighthousedesktop](screenshots/lighthousedesktop.png)
