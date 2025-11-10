@@ -177,6 +177,15 @@ SippyShop uses a relational database (PostgreSQL)
 - Forgot Password
 
 
+## Future Features
+
+- Add product categories (Sort by Price)
+- Add user profile page with address book
+- Add email notifications
+
+## Wireframes
+
+
 # Automated Tests
 
 ## I made 5 automated tests to check that my models and views worked.
@@ -243,6 +252,24 @@ SippyShop uses a relational database (PostgreSQL)
 - splitting overly long lines
 - removing unused imports
 
+
+## Requirements
+All Python dependencies are listed in requirements.txt
+Main packages used:
+- Django
+- psycopg2-binary
+- django-allauth
+- stripe
+- django-crispy-forms, crispy-bootstrap5
+- cloudinary, django-cloudinary-storage
+- django-countries
+- gunicorn,whitenoise
+- flake8
+
+**Install with:**
+`pip instll -r requirements.txt`
+
+
 ## ValidationscreenshotsHTML
 
 
@@ -287,6 +314,11 @@ SippyShop uses a relational database (PostgreSQL)
 ![flake8.test](screenshots/flake8validator.png)
 
 
+## Design Choices
+
+
+
+
 ## Performance and Accessibility
 
 ### Desktop Performance with Lighthouse
@@ -317,6 +349,9 @@ storage.
 6. Run migrations to build the database: heroku run python3 manage.py migrate
 7. Run collectstatic: heroku run python3 manage.py collectstatic
 
+StaticFiles are handled bt WhiteNoise.
+Images are stored with Cloudinary.
+
 ### Deployment Troubleshooting (Problems I Solved)
 I ran into a few problems during deployment:
 - **Problem 1: Product Images Disappeared**
@@ -330,6 +365,14 @@ images did not transfer to Heroku.
 - **Issue:** The small icon in the browser tab ( the favicon ) was not showing up.
 - **Solution:** This was as simple spelling error. I had linked to favicon.png in my HTML, but the file
  was actually named Favicon.png(with a capital'F'). When i fixed the name in the HTML template, it loaded correctly.
+
+
+## Security
+
+- All secret keys and passwords are stored in environment variables, not in the code
+- .env file is in .gitignore and not uploaded to Github
+- Django DEBUG is set to False in production
+- Only allowed hosts can access the site
 
 
 
