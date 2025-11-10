@@ -30,6 +30,7 @@
 - [Performance and Accessibility](#performance-and-accessibility)
 - [Deployment](#deployment)
 - [Wireframes](#wireframes)
+- [README](#readme)
 
 
 ## Introduction
@@ -455,8 +456,8 @@ even some "Fix validators", or "added images to the library" "deployment setup" 
 - Order history is visible only to the owner
 
 
-## Attrribution
-**Attribution**
+## Attribution
+**Attribution:**
 - All code is written by me unless otherwise stated.
   Any code from tutorials or other sources is marked with a comment and source link in the code and/or
   listed here in the README.
