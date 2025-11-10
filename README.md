@@ -421,11 +421,19 @@ images did not transfer to Heroku.
 - **Solution:** This was as simple spelling error. I had linked to favicon.png in my HTML, but the file
  was actually named Favicon.png(with a capital'F'). When i fixed the name in the HTML template, it loaded correctly.
 
+### Problem 3: My Phone Got stolen So I Couldnt Login Into My Main Heroku Account
+-**Issue:** Its true, my phone got stolen so i needed to buy a new one, but i had authenticator app for
+Heroku on the old phone so had a big problem with connection my account and website deployment.
+- **Solution:** Bought fast a new phone, tried to sign in but i couldnt cause of the authenticator app,
+so i created a new heroku app, started over and bought the subscription i needed to use Heroku.
+
 
 ## Version Control
 
 This project uses Git and Github for version control.
 All code changes are tracked with regular commits.
+Messages like: "Add models", "Add cart", "Add checkout", "Add Stripe test payment" and 
+even some "Fix validators", or "added images to the library" "deployment setup" and problem fix.
 
 
 ## Security
@@ -436,6 +444,11 @@ All code changes are tracked with regular commits.
 - Django DEBUG is set to False in production, and all secret keys are kept
   out of the codebase.
 - Only allowed hosts can access the site.
+- ALLOWED_HOSTS includes the Heroku domain
+- CSRF_TRUSTED_ORIGINS includes the live URL
+- Only staff can use Django admin
+- users can only delete and edit their own reviews
+- Order history is visible only to the owner
 
 
 ## Attrribution
