@@ -105,7 +105,29 @@ owner) need to be able to do.
 
 - **Delete Review** - **Story:** As the review owner I want to delete my review if I don't want it anymore
 - **Test:** Click "Delete" on own review - **PASS**
-  
+
+# Features
+
+### Start Page
+![herosection](screenshots/herosection.png)
+
+### Product List
+![productlist](screenshots/productlist.png)
+
+### Product Detail and Review Section
+![productdetail](screenshots/productdetail.png)
+
+### Shopping Cart
+![shoppingcart](screenshots/shoppingcart.png)
+
+### Checkout
+![checkout](screenshots/checkout.png)
+
+### Payment Success!
+![paymentsuccess](screenshots/paymentsuccess.png)
+
+
+
 
 # Automated Tests
 
