@@ -16,6 +16,10 @@
 - [Design Choices](#design-choices)
 - [Automated Tests](#Automated-tests)
 - [Validation](#validation)
+- [ValidationscreenshotsHTML](#Validationscreenshotshtml)
+- [ValidationscreenshotsCSS](#Validationscreenshotscss)
+- [ValidationscreenshotsFLAKE8](#Validationscreenshotsflake8)
+- [ValidationscreenshotsJS](#Validationscreenshotsjs)
 - [Deployment](#deployment)
 - [Wireframes](#wireframes)
 
@@ -158,4 +162,48 @@ The app also supports user accounts so people can see their past orders and leav
 - adding the required 2 blank lines before top-level defs/classes
 - splitting overly long lines
 - removing unused imports
+
+## ValidationscreenshotsHTML
+
+
+![home.html](screenshots/home.htmlvalidator.png)
+
+![cart.html](screenshots/cart-html.validator.png)
+
+![edit_review.html](screenshots/edit_review.htmlvalidator.png)
+
+![payment_success.html](screenshots/payment_success.htmlvalidator.png)
+
+![product_detail.html](screenshots/product_detail.htmlvalidator.png)
+
+![product_list.html](screenshots/product_list.htmlvalidator.png)
+
+
+## ValidationscreenshotsCSS
+
+
+![base.css](screenshots/base.cssvalidator.png)
+
+![cart.css](screenshots/cart.cssvalidator.png)
+
+![checkout.css](screenshots/checkout.cssvalidator.png)
+
+![payment_success.css](screenshots/payment_success.cssvalidator.png)
+
+![product_detail.css](screenshots/product_detail.cssvalidator.png)
+
+
+## ValidationscreenshotsJS
+
+
+![main.js](screenshots/main.jsvalidator.png)
+
+![stripe_checkout.js](screenshots/stripe-checkout.jsvalidator.png)
+
+
+## ValidationscreenshotsFLAKE8
+
+
+![flake8.test](screenshots/flake8validator.png)
+
   
