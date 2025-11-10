@@ -29,14 +29,13 @@
 - [Wireframes](#wireframes)
 
 
-
-
 ## Introduction
 
 SippyShop is a full-stack e-commerce web application built with Django. The idea is to have a small online store that sells mugs
 where users can browse products, log in, add items to a cart, and place an order very easily. The project focuses on core webshop features rather
 than a huge catalogue.
 The app also supports user accounts so people can see their past orders and leave reviews on products they've bought.
+
 
 ## Project Purpose and Goals
 
@@ -152,6 +151,7 @@ can have multiple items, and each review is linked to both a product and a user.
 - **Delete Review** - **Story:** As the review owner I want to delete my review if I don't want it anymore
 - **Test:** Click "Delete" on own review - **PASS**
 
+
 # Features
 
 Stripe is used for secure payments (test mode only),
@@ -202,16 +202,16 @@ Custom JavaScript is used for:
 
 ## Wireframes
 
-
+### Start Page (Hero Section)
 ![WIREFRAMESTARTPAGE](screenshots/STARTPAGEWIREFRAME.png)
 
-
+### Product List 
 ![WIREFRAMEPRODUCTLIST](screenshots/PRODUCTLISTWIREFRAME.png)
 
-
+### Shopping Cart
 ![WIREFRAMESHOPPINGCART](screenshots/SHOPPINGCARTWIREFRAME.png)
 
-
+### Checkout
 ![WIREFRAMECHECKOUT](screenshots/CHECKOUTWIREFRAME.png)
 
 
@@ -371,10 +371,6 @@ Both fonts are from Google Fonts
 - Hero section uses a large background image to create visual impact
 
 
-
-
-
-
 ## Performance and Accessibility
 
 The site has been tested with Lighthouse
@@ -464,8 +460,6 @@ All code changes are tracked with regular commits.
   - Used this Youtube tutorial video for more django knowledge while coding along:[https://www.youtube.com/watch?v=0gAFW4UxsZg&list=PL4cUxeGkcC9iqfAag3a_BKEX1N43uJutw]
   - Used this Youtube tutorial video for a remainder and knowledge to create the scrollUpButton with js:[https://www.youtube.com/watch?v=nw7I1vfOzzw]
  
-
-
 
 
 ## README
