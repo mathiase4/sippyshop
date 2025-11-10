@@ -267,7 +267,7 @@ Both manual and automated tests have been done to make sure all main features wo
 
 ### JavaScript JShint
 
-- `products/statid/js - main.js (jshint didn't like const or let so i needed to change it to var to go through) - **PASS**
+- `products/static/js - main.js (jshint didn't like const or let so i needed to change it to var to go through) - **PASS**
 - `products/static/js - stripe-checkout.js ( want var so changed const to var, and everything was pass except import in comment that i use stripe) - **PASS**
 
 ### Flake8 - Python 
