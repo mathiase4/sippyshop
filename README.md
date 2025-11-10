@@ -7,6 +7,7 @@
 
 ## Table of Contents
 - [Introduction](#introduction)
+- [Project Purpose and Goals](#project-purpose-and-goals)
 - [User Stories And Manuel Testing](#user-stories-and-manual-testing)
 - [Agile Planning](#agile-planning)
 - [Features](#features)
@@ -29,10 +30,18 @@
 
 ## Introduction
 
-SippyShop is a full-stack e-commerce web application built with django. The idea is to have a sall online store that sells mugs
-where users can browse products, log in, add items to a cart, and place an order very easy. The project focuses on core webshop features rather
+SippyShop is a full-stack e-commerce web application built with Django. The idea is to have a small online store that sells mugs
+where users can browse products, log in, add items to a cart, and place an order very easily. The project focuses on core webshop features rather
 than a huge catalogue.
 The app also supports user accounts so people can see their past orders and leave reviews on products they've bought, which makes the site a bit more interactive.
+
+## Project Purpose and Goals
+
+My main goal was to build a complete e-commerce site with Django that is so simple to use that
+even a 6 year old can go in and look around on the website.
+
+To plan the site, i broke it down into what a User (the customer) wants to do, and what (the site
+owner) need to be able to do.
 
 **User Goals**
 - View a list of mugs and see product details
@@ -43,7 +52,7 @@ The app also supports user accounts so people can see their past orders and leav
 
 **Site Owner Goals**
 - Sell products online
-- Handle secure payments with (Stripe)
+- Handle secure payments with (Stripe testmode)
 - Manage products from the Django admin
 - Keep users engaged through accounts and reviews
 
