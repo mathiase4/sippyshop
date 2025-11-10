@@ -20,6 +20,7 @@
 - [ValidationscreenshotsCSS](#Validationscreenshotscss)
 - [ValidationscreenshotsJS](#Validationscreenshotsjs)
 - [ValidationscreenshotsFLAKE8](#Validationscreenshotsflake8)
+- [Performance and Accessibility](#performanceandaccessibility)
 - [Deployment](#deployment)
 - [Wireframes](#wireframes)
 
@@ -205,5 +206,14 @@ The app also supports user accounts so people can see their past orders and leav
 
 
 ![flake8.test](screenshots/flake8validator.png)
+
+
+## Performance and Accessibility
+
+
+![Lighthousedesktop](screenshots/lighthousedesktop.png)
+
+
+![Lighthousemobile](screenshots/lighthousemobile.png)
 
   
