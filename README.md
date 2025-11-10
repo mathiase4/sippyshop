@@ -18,8 +18,8 @@
 - [Validation](#validation)
 - [ValidationscreenshotsHTML](#Validationscreenshotshtml)
 - [ValidationscreenshotsCSS](#Validationscreenshotscss)
-- [ValidationscreenshotsFLAKE8](#Validationscreenshotsflake8)
 - [ValidationscreenshotsJS](#Validationscreenshotsjs)
+- [ValidationscreenshotsFLAKE8](#Validationscreenshotsflake8)
 - [Deployment](#deployment)
 - [Wireframes](#wireframes)
 
