@@ -8,7 +8,7 @@
 ## Table of Contents
 - [Introduction](#introduction)
 - [Project Purpose and Goals](#project-purpose-and-goals)
-- [Technologies Used](#technologiesused)
+- [Technologies Used](#technologies-used)
 - [Django Apps](#django-apps)
 - [Database and Models](#database-and-models)
 - [User Authentication](#user-authentication)
@@ -333,6 +333,32 @@ Main packages used:
 
 
 ## Design Choices
+
+
+### Color Scheme
+The site uses a dark, warm color inspired by autumn and coffee:
+- **Background:** Darkbrown for a cozy coffee shop feel
+- **Text:** cream/off-white for good readability
+- **Accents:** Brown gradients for buttons and highlights
+
+### Typography
+- **Headings:** Merriweather gives a classic and elegant look
+- **Body Text:** Montserrat for modern and easy to read
+
+Both fonts are from Google Fonts
+
+### Layout
+- The site uses a simple, clean layout with clear sections
+- Bootstrap grid system ensures the site is responsive on all devices
+- Navigation meny collapses to hamburger menu on mobile screens
+- Product cards use consistent spacing and hover effects
+
+### Images
+- All product images are square format for consistency
+- Images are hosted on Cloudinary for fast loading
+- Hero section uses a large background image to create visual impact
+
+
 
 
 
