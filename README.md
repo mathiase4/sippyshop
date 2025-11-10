@@ -210,10 +210,10 @@ The app also supports user accounts so people can see their past orders and leav
 
 ## Performance and Accessibility
 
-
+### Desktop Performance with Lighthouse
 ![Lighthousedesktop](screenshots/lighthousedesktop.png)
 
-
+### Mobile Performance with Lighthouse
 ![Lighthousemobile](screenshots/lighthousemobile.png)
 
   
