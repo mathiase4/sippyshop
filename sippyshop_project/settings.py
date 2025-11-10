@@ -193,3 +193,5 @@ STRIPE_CURRENCY = 'usd'
 # EMAIL in development
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 DEFAULT_FROM_EMAIL = "no-reply@sippyshop.local"
+
+X_FRAME_OPTIONS = "ALLOWALL"
