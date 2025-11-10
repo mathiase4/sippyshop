@@ -1,11 +1,9 @@
-# SippyShop  
+# SippyShop - Mug E-Commerce Store
 
-## A e-commerce website for selling different type of mugs.
+- ![SippyShop mockup](screenshots/mockup)
 
-## Live Project Links
-
--**Live Site:**
--**Repository:**
+## Live Project Link
+- [Live Site on Heroku](https://sippyshop-project-249d59235c6d.herokuapp.com/)
 
 ## Table of Contents
 - [Introduction](#introduction)
