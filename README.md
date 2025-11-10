@@ -203,6 +203,18 @@ Custom JavaScript is used for:
 ## Wireframes
 
 
+![WIREFRAMESTARTPAGE](screenshots/STARTPAGEWIREFRAME.png)
+
+
+![WIREFRAMEPRODUCTLIST](screenshots/PRODUCTLISTWIREFRAME.png)
+
+
+![WIREFRAMESHOPPINGCART](screenshots/SHOPPINGCARTWIREFRAME.png)
+
+
+![WIREFRAMECHECKOUT](screenshots/CHECKOUTWIREFRAME.png)
+
+
 # Automated Tests
 Both manual and automated tests have been done to make sure all main features work.
 
