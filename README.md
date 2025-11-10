@@ -16,7 +16,6 @@
 - [Features](#features)
 - [Future Features](#future-features)
 - [Security](#security)
-- [Accessibility](#accessibility)
 - [Design Choices](#design-choices)
 - [Automated Tests](#Automated-tests)
 - [Validation](#validation)
