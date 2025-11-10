@@ -126,7 +126,12 @@ owner) need to be able to do.
 ### Payment Success!
 ![paymentsuccess](screenshots/paymentsuccess.png)
 
+### User Account Features
 
+- Signup
+- Login
+- Logout
+- Forgot Password
 
 
 # Automated Tests
